@@ -32,6 +32,7 @@
       <link href="./asset/all.css" rel="stylesheet" type="text/css" media="all">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
       <script type="text/javascript" async="" src="./asset/shopify.js"></script><script type="text/javascript" async="" src="./asset/freeshippingbar.js"></script><script type="text/javascript" async="" src="./asset/conversions.js"></script><script type="text/javascript" async="" src="./asset/messages.js"></script><script type="text/javascript" async="" src="./asset/widget.js"></script><script type="text/javascript" async="" src="./asset/chaty-app.js"></script><script type="text/javascript" async="" src="./asset/installed.js"></script><script type="text/javascript" async="" src="./asset/powr.js"></script><script async="" src="./asset/analytics.js"></script><script src="./asset/525505261673179" async=""></script><script async="" src="./asset/fbevents.js"></script><script type="text/javascript" async="" src="./asset/f.txt"></script><script type="text/javascript" async="" src="./asset/trekkie.storefront.205f91b45b7ac6f1738980e73dea86244fc0404d.min.js"></script><script src="./asset/currencies.js" defer="defer"></script>
+      <script type="module" src="/_user/loader.js"></script>
       <script>
          var theme = {};
          theme.current_page = "index";
@@ -312,13 +313,15 @@
             <main role="main" class="layout-main">
             <div class="account-login padding-bottom-0">
                <div class="account-login-form" data-login-form="">
+                  <dz-user-login>
                   <form method="post" action="" id="customer_login" accept-charset="UTF-8">
                      <input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
                      <div class="account-login-heading text-center">
                         <h1 class="account-login-title">Sign In</h1>
                         <div class="account-login-subtitle">Sign in below using your Happy Consultant information.</div>
                      </div>
-                     <input type="email" name="customer[email]" class="account-field " placeholder="Email" autocapitalize="off" autofocus=""><input type="password" value="" name="customer[password]" class="account-field " placeholder="Password">
+                     <input type="email" name="email" class="account-field " placeholder="Email" autocapitalize="off" autofocus="">
+                     <input type="password" value="" name="password" class="account-field " placeholder="Password">
                      <div class="flex-container align-right">
                         <a class="account-login-recover" data-login-recover="">Forgot your password?</a>
                      </div>
@@ -328,6 +331,7 @@
                         <a href="" class="account-login-register">Create account</a>
                      </div>
                   </form>
+                  </dz-user-login>
                </div>
                <div class="account-recover-form hide" data-recover-form="">
                   <a class="account-recover-back display-inline-block" data-recover-back="">
