@@ -47,28 +47,24 @@
                   </div>
                   <div class="cell small-12 medium-8 large-8 xlarge-8 xxlarge-8 xxxlarge-8">
                      <div class="desktop-nav-list flex-container align-right">
-                        <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-login dropdown menu">
+                        <!-- <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-login dropdown menu">
                            <a class="icon-account display-block" data-toggle="account-box-desktop" aria-controls="account-box-desktop" data-is-focus="false" data-yeti-box="account-box-desktop" aria-haspopup="true" aria-expanded="false" id="uebz4u-dd-anchor" style="cursor: pointer;">Sign In</a>  
                            <ul class="dropdown-pane no-bullet has-position-bottom has-alignment-left" id="account-box-desktop" data-dropdown="" data-hover="true" data-hover-pane="true" aria-labelledby="uebz4u-dd-anchor" aria-hidden="true" data-yeti-box="account-box-desktop" data-resize="account-box-desktop" data-u="gmvpk1-u" data-events="resize">
                               <li class="not-login">
                                  <div class="account-login">
-                                    <dz-user-login>
-                                    <form id="customer_login_box">
-                                       <!--<input type="hidden" name="form_type" value="customer_login">
-                                       <input type="hidden" name="utf8" value="✓">-->
-                                       <input type="email" name="email" class="account-field " placeholder="Email" autocapitalize="off" autocomplete="email">
-                                       <input type="password" value="" name="password" class="account-field " placeholder="Password" autocomplete="current-password">
-                                       <a href="" class="account-login-recover">Forgot your password?</a>
+                                    <form method="post" action="" id="customer_login_box" accept-charset="UTF-8">
+                                       <input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓"><input type="email" name="customer[email]" class="account-field " placeholder="Email" autocapitalize="off" autocomplete="email"><input type="password" value="" name="customer[password]" class="account-field " placeholder="Password" autocomplete="current-password"><a href="" class="account-login-recover">Forgot your password?</a>
                                        <div class="sign-in_create-account">
-                                          <button type="submit" class="button account-login-submit" name="login">Sign In</button>
-                                          <!-- <div>NOT MEMBER? BECOME A MEMBER TODAY</div> -->
+                                          <button type="submit" class="button account-login-submit">Sign In</button>
                                           <a class="account-login-register" href="register.html">Create account</a>
                                        </div>
                                     </form>
-                                    </dz-user-login>
                                  </div>
                               </li>
                            </ul>
+                        </div> -->
+                        <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                           <a class="display-block" href="login.html">Sign In</a>
                         </div>
                         <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
                            <a class="display-block" href="register.html">Register</a>

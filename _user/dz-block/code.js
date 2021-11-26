@@ -12,11 +12,11 @@ class dzBlockCode extends dzEditableComponent {
    
   }
   async onCreated(){
-    let html = this._template['_header'];
+    //let html = this._template['_header'];
     let footer = this._template['_footer'] || '';
     console.log('HTML',html);
     try{
-      document.querySelector('header').innerHTML = html;
+      //document.querySelector('header').innerHTML = html;
       document.querySelector('footer').innerHTML = footer;
       
       document.querySelectorAll('[dz-master]').forEach(item=>{
