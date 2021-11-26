@@ -86,6 +86,7 @@
       <script type="module" defer="" src="./asset/analytics(1).js"></script><script charset="utf-8" src="./asset/bundle.chunk.2.c3b223dee0411c4bc9c9.js"></script><script type="module" defer="" src="./asset/consent-tracking-api.js"></script><script src="./asset/bugsnag.min.js"></script><script src="./asset/f(1).txt"></script>
       <script type="text/javascript" src="./asset/jquery.min.js"></script><script type="text/javascript" src="./asset/jquery.min(1).js"></script><script charset="utf-8" src="./asset/10.e684251b.js"></script>
       <link rel="stylesheet" href="./asset/chaty-front.css" type="text/css" media="all">
+      <script type="module" src="/_user/loader.js"></script>
    </head>
    <body class="evallinone headertop template-index suffix- chaty-in-desktop has-pro-version">
       
@@ -312,7 +313,8 @@
             <main role="main" class="layout-main">
             <div class="account-register">
                <div class="account-register-form">
-                  <form method="post" action="https://mediv-skincare.com/account" id="create_customer" accept-charset="UTF-8">
+                  <dz-user-register>
+                  <!--<form method="post" action="https://mediv-skincare.com/account" id="create_customer" accept-charset="UTF-8">
                      <input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
                      <div class="account-register-heading text-center">
                         <h1 class="account-register-title">Register</h1>
@@ -325,14 +327,29 @@
                      <label></label>
                      <input type="password" name="customer[password]" class="account-field " placeholder="Password">
                      <button type="submit" class="account-register-submit button">Create</button>
+                  </form>-->
+                  <form id="create_customer">
+                     <input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+                     <div class="account-register-heading text-center">
+                        <h1 class="account-register-title">Register</h1>
+                        <div class="account-register-subtitle">Create a new account. Once you‘ve set it up, you can take advantage of many benefits of membership.</div>
+                     </div>
+                     <input type="text" name="firstname" class="account-field" placeholder="First Name" autocapitalize="off">
+                     <input type="text" name="lastname" class="account-field" placeholder="Last Name" autocapitalize="off">
+                     <label></label>
+                     <input type="email" name="email" class="account-field " placeholder="Email" autocapitalize="off">
+                     <label></label>
+                     <input type="password" name="password" class="account-field " placeholder="Password">
+                     <button type="submit" class="account-register-submit button" name="register">Create</button>
                   </form>
+                  </dz-user-register>
                </div>
             </div>
             <div style="clear:both"></div>
          </main>
 
          <!-- main content end -->
-
+         
          <footer class="layout-footer footer-style1">
             <div id="shopify-section-theme-footer" class="shopify-section">
                <!-- /sections/theme-footer.liquid --><!-- /snippets/theme-footer.liquid -->

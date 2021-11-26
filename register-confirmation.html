@@ -311,65 +311,42 @@
          <div class="searchresult-area" data-ajax-search-result="" style="display: none;"></div>
         
             <main role="main" class="layout-main">
-            <!-- /templates/page.about.liquid --><!-- /snippets/breadcrumbs.liquid -->
-            <div class="breadcrumb">
-               <div class="grid-container flex-container">
-                  <ul class="breadcrumbs">
-                     <li itemscope="" itemtype="">
-                        <a href="index.html" title="Mediv" itemprop="url">
-                        <span itemprop="title">Home</span>
-                        </a>
-                     </li>
-                     <li itemscope="" itemtype="">
-                        <a href="aboutus.html" title="關於我們" itemprop="url">
-                        <span itemprop="title">關於我們</span>
-                        </a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-            <div id="shopify-section-about-template" class="shopify-section about">
-               <div class="about-content">
-                  <div class="section-banner2">
-                     <div class="grid-container">
-                        <div class="section-content">
-                           <div class="grid-x grid-margin-x">
-                              <div class="banner-element banner-left cell medium-6 large-6">
-                                 <a class="image" href="index.html">                
-                                 <img class="width-100" src="/image/HC%20Logo-01%20%281%29.png" >                
-                                 </a>
-                                 <div class="caption">
-                                 </div>
-                              </div>                             
-                           </div>
+            <div class="account-register">
+               <div class="account-register-form">
+                  <dz-user-register-confirmation>
+                  <!--<form method="post" action="https://mediv-skincare.com/account" id="create_customer" accept-charset="UTF-8">
+                     <input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+                     <div class="account-register-heading text-center">
+                        <h1 class="account-register-title">Register</h1>
+                        <div class="account-register-subtitle">Create a new account. Once you‘ve set it up, you can take advantage of many benefits of membership.</div>
+                     </div>
+                     <input type="text" name="customer[first_name]" class="account-field" placeholder="First Name" autofocus="">
+                     <input type="text" name="customer[last_name]" class="account-field" placeholder="Last Name">
+                     <label></label>
+                     <input type="email" name="customer[email]" class="account-field " placeholder="Email" autocapitalize="off">
+                     <label></label>
+                     <input type="password" name="customer[password]" class="account-field " placeholder="Password">
+                     <button type="submit" class="account-register-submit button">Create</button>
+                  </form>-->
+                  <form id="create_customer">
+                     <input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+                     <div class="account-register-heading text-center">
+                        <h1 class="account-register-title">Register Confirmation</h1>
+                        <div class="account-register-subtitle">
+                           Please input the verify code from your registered email.                        
                         </div>
                      </div>
-                  </div>
-                  <div class="section-text">
-                     <div class="grid-container">
-                        <div class="section-content">
-                           <h2 style="text-align: left;"><strong>Happy Consultant</strong></h2>
-                           <p>&nbsp;</p>
-                           <p>學院簡介
-
-                              Happy Consultant    是與香港多間美容機構合作的辦學團體，致力向大眾提供多元化及專業的培訓服務，協助學員掌握行業最新資訊和相關技能，提升學員在勞動市場上的就業能力與競爭力，全面增值。
-                              
-                              為增加學員的優勢，本院特聘知名講師及在職專業人士等開設所有課程，奠定學員們的專業地位、培養管理及市場營銷能力，為僱主提供受全面性訓練的優質人才。
-                              
-                              同時，我們將繼續努力建立廣泛的行業諮詢架構，諮詢僱員及僱主意見，緊貼市場發展趨勢，積極開拓更多適合市場需要的課程。</p>
-                           <div style="text-align: center;"></div>
-                           
-                           <p>&nbsp;</p>
-                        </div>
-                     </div>
-                  </div>                  
+                     <input type="text" name="code" class="account-field" placeholder="Verify Code" autocapitalize="off">
+                     <button type="submit" class="account-register-submit button" name="register">Verify</button>
+                  </form>
+                  </dz-user-register-confirmation>
                </div>
-               <div style="clear:both"></div>
             </div>
+            <div style="clear:both"></div>
          </main>
 
          <!-- main content end -->
-
+         
          <footer class="layout-footer footer-style1">
             <div id="shopify-section-theme-footer" class="shopify-section">
                <!-- /sections/theme-footer.liquid --><!-- /snippets/theme-footer.liquid -->
