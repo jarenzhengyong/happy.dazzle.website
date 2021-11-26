@@ -32,7 +32,6 @@
       <link href="./asset/all.css" rel="stylesheet" type="text/css" media="all">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
       <script type="text/javascript" async="" src="./asset/shopify.js"></script><script type="text/javascript" async="" src="./asset/freeshippingbar.js"></script><script type="text/javascript" async="" src="./asset/conversions.js"></script><script type="text/javascript" async="" src="./asset/messages.js"></script><script type="text/javascript" async="" src="./asset/widget.js"></script><script type="text/javascript" async="" src="./asset/chaty-app.js"></script><script type="text/javascript" async="" src="./asset/installed.js"></script><script type="text/javascript" async="" src="./asset/powr.js"></script><script async="" src="./asset/analytics.js"></script><script src="./asset/525505261673179" async=""></script><script async="" src="./asset/fbevents.js"></script><script type="text/javascript" async="" src="./asset/f.txt"></script><script type="text/javascript" async="" src="./asset/trekkie.storefront.205f91b45b7ac6f1738980e73dea86244fc0404d.min.js"></script><script src="./asset/currencies.js" defer="defer"></script>
-      <script type="module" src="/_user/loader.js"></script>
       <script>
          var theme = {};
          theme.current_page = "index";
@@ -87,6 +86,7 @@
       <script type="module" defer="" src="./asset/analytics(1).js"></script><script charset="utf-8" src="./asset/bundle.chunk.2.c3b223dee0411c4bc9c9.js"></script><script type="module" defer="" src="./asset/consent-tracking-api.js"></script><script src="./asset/bugsnag.min.js"></script><script src="./asset/f(1).txt"></script>
       <script type="text/javascript" src="./asset/jquery.min.js"></script><script type="text/javascript" src="./asset/jquery.min(1).js"></script><script charset="utf-8" src="./asset/10.e684251b.js"></script>
       <link rel="stylesheet" href="./asset/chaty-front.css" type="text/css" media="all">
+      <script type="module" src="/_user/loader.js"></script>
    </head>
    <body class="evallinone headertop template-index suffix- chaty-in-desktop has-pro-version">
       
@@ -311,75 +311,42 @@
          <div class="searchresult-area" data-ajax-search-result="" style="display: none;"></div>
         
             <main role="main" class="layout-main">
-            <div class="account-login padding-bottom-0">
-               <div class="account-login-form" data-login-form="">
-                  <dz-user-login>
-                  <form method="post" action="" id="customer_login" accept-charset="UTF-8">
-                     <input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
-                     <div class="account-login-heading text-center">
-                        <h1 class="account-login-title">Sign In</h1>
-                        <div class="account-login-subtitle">Sign in below using your Happy Consultant information.</div>
+            <div class="account-register">
+               <div class="account-register-form">
+                  <dz-user-register-confirmation>
+                  <!--<form method="post" action="https://mediv-skincare.com/account" id="create_customer" accept-charset="UTF-8">
+                     <input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+                     <div class="account-register-heading text-center">
+                        <h1 class="account-register-title">Register</h1>
+                        <div class="account-register-subtitle">Create a new account. Once you‘ve set it up, you can take advantage of many benefits of membership.</div>
                      </div>
-                     <input type="email" name="email" class="account-field " placeholder="Email" autocapitalize="off" autofocus="">
-                     <input type="password" value="" name="password" class="account-field " placeholder="Password">
-                     <div class="flex-container align-right">
-                        <a class="account-login-recover" data-login-recover="">Forgot your password?</a>
+                     <input type="text" name="customer[first_name]" class="account-field" placeholder="First Name" autofocus="">
+                     <input type="text" name="customer[last_name]" class="account-field" placeholder="Last Name">
+                     <label></label>
+                     <input type="email" name="customer[email]" class="account-field " placeholder="Email" autocapitalize="off">
+                     <label></label>
+                     <input type="password" name="customer[password]" class="account-field " placeholder="Password">
+                     <button type="submit" class="account-register-submit button">Create</button>
+                  </form>-->
+                  <form id="create_customer">
+                     <input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+                     <div class="account-register-heading text-center">
+                        <h1 class="account-register-title">Register Confirmation</h1>
+                        <div class="account-register-subtitle">
+                           Please input the verify code from your registered email.                        
+                        </div>
                      </div>
-                     <button type="submit" class="button account-login-submit">Sign In</button>
-                     <div class="text-center margin-bottom-1">
-                        <div class="member-text">NOT MEMBER? BECOME A MEMBER TODAY</div>
-                        <a href="" class="account-login-register">Create account</a>
-                     </div>
+                     <input type="text" name="code" class="account-field" placeholder="Verify Code" autocapitalize="off">
+                     <button type="submit" class="account-register-submit button" name="register">Verify</button>
                   </form>
-                  </dz-user-login>
-               </div>
-               <div class="account-recover-form hide" data-recover-form="">
-                  <a class="account-recover-back display-inline-block" data-recover-back="">
-                     <svg class="svg-icon">
-                        <use xlink:href="#icon-arrow-left"></use>
-                     </svg>
-                  </a>
-                  <div class="text-center show-for-large">
-                     <h1 class="account-recover-form-title">Reset your password</h1>
-                     <p>We will send you an email to reset your password.</p>
-                  </div>
-                  <form method="post" action="" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓"><input type="email" value="" name="email" class="account-field" placeholder="Email" autocapitalize="off">
-                     <button type="submit" class="account-recover-submit button">Submit</button>
-                  </form>
+                  </dz-user-register-confirmation>
                </div>
             </div>
-            <script>
-               (function () {
-                 var loginForm = document.querySelector('[data-login-form]');
-                 var recoverForm = document.querySelector('[data-recover-form]');
-               
-                 var recover = document.querySelector('[data-login-recover]');
-                 if (recover) {
-                   recover.addEventListener('click', function() {
-                     if (loginForm && recoverForm) {
-                       loginForm.classList.add('hide');
-                       recoverForm.classList.remove('hide');
-                     }
-                   });
-                 }
-               
-                 var back = document.querySelector('[data-recover-back]');
-                 if (back) {
-                   back.addEventListener('click', function() {
-                     if (loginForm && recoverForm) {
-                       loginForm.classList.remove('hide');
-                       recoverForm.classList.add('hide');
-                     }
-                   });
-                 }
-               })();
-            </script>
             <div style="clear:both"></div>
          </main>
 
-
          <!-- main content end -->
-
+         
          <footer class="layout-footer footer-style1">
             <div id="shopify-section-theme-footer" class="shopify-section">
                <!-- /sections/theme-footer.liquid --><!-- /snippets/theme-footer.liquid -->
