@@ -196,6 +196,7 @@ class dzProductDetailCode extends dzEditableComponent {
     //   if (cfm) 
     //     this.addProduct();      
     // }
+    console.log('Product ID',id);
     await this.reloadData();
     this._listenDzFunction();
 
@@ -210,11 +211,13 @@ class dzProductDetailCode extends dzEditableComponent {
     // this._handleLikeStatus();
   }
   async getItem(){
-      let item = this.getAttribute('item') || null;
-      if (!item)
+      // let item = this.getAttribute('item') || null;
+      // if (!item)
           this.item = await  this.productManager.getDataByES(this.dataId);
-      else 
-          this.item = JSON.parse(item);
+          console.log('Item Data ID',this.dataId,this.item);
+
+          // else 
+      //     this.item = JSON.parse(item);
   }
   static get properties() {
     return {
@@ -223,7 +226,9 @@ class dzProductDetailCode extends dzEditableComponent {
 
   async reloadData(){
     let item = await this.getItem();
-      let template = this.innerHTML;
+    console.log('Item',item); 
+    let template = this.innerHTML;
+      console.log('Template',template);
       let html = this.productManager.replaceToken(this.item,this.innerHTML);
       this.innerHTML = html;
       
