@@ -12,12 +12,14 @@ class dzUserPanelCode extends dzEditableComponent {
     this.coreElement ={};
     try{
           this.coreVariable.forEach(vars => {
-              let elm = this.querySelector('['+vars+']') || null;
-              if (elm)
-                this.coreElement[vars] = elm;
+              let elm = this.querySelectorAll('['+vars+']') || null;
+              
+              // if (elm)
+              this.coreElement[vars] = elm;
           });
+          console.log('Vars',this.coreElement);
     } catch(e){
-
+        console.log('Vars error');
     }
   }
 
@@ -84,17 +86,30 @@ class dzUserPanelCode extends dzEditableComponent {
     const placeHolder = this.querySelector('.user-panel-placeholder');
 
       if (authUser) {
+        console.log('I am logined');
         this.isLoggedIn = true;
-        this.coreElement['dz-user-no-login'].remove();
-        this.coreElement['dz-user-logined'].style.visibility ='visible';
-        // this.coreElement['dz-user-name'].innerHTML = '';
-        this.coreElement['dz-logout'].addEventListener('click',e=>{
-          this.logout();
+        this.coreElement['dz-user-no-login'].forEach(item=>{
+          console.log('Vars',item);
+          item.remove();
         });
+        this.coreElement['dz-user-logined'].forEach(item=>{
+          item.style.visibility ='visible';         
+        });
+        this.coreElement['dz-logout'].forEach(item=>{
+          item.addEventListener('click',e=>{
+            this.logout();
+          });
+        });
+
+        // this.coreElement['dz-user-name'].innerHTML = '';
+
       } else {
-        this.coreElement['dz-user-no-login'].style.visibility ='visible';
-        this.coreElement['dz-user-logined'].remove();
-  
+        this.coreElement['dz-user-no-login'].forEach(item=>{
+          item.style.visibility ='visible';
+        });
+        this.coreElement['dz-user-logined'].forEach(item=>{
+          item.remove();
+        });  
       }
     
 

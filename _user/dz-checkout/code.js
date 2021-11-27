@@ -39,6 +39,14 @@ class dzCheckoutCode extends dzEditableComponent {
       });
     }
   }
+  async cartToDesc(products){
+    let str = '';
+    products.forEach(item=>{
+        let title = item.name + 'x'+item.quantity;
+        str += title+',';
+    });
+    return str;
+  }
 
   async _calculateSummary() {
     const cartItems = window.store.get('cartItems');
@@ -73,6 +81,7 @@ class dzCheckoutCode extends dzEditableComponent {
     });
 
     window.store.set('cartProducts', cartProducts);
+    this.cartToDesc(cartProducts);
 
     const cartDiscount = window.store.get('cartDiscount') || {amount: 0};
     const shippingMethod = window.store.get('shippingMethod') || {amount: 0};
@@ -82,7 +91,7 @@ class dzCheckoutCode extends dzEditableComponent {
     // this.querySelector('.summary-cartDiscount').innerText = `$${window.helpers.formatNumber(cartDiscount.amount)}`;
     // this.querySelector('.summary-total').innerText = `$${window.helpers.formatNumber(subTotal + shippingMethod.amount - cartDiscount.amount)}`;
     this.total = subTotal + shippingMethod.amount - cartDiscount.amount;
-
+    console.log('Total',this.total,shippingMethod.amount,cartDiscount.amount);
     // Handle checkout button
     const paymentMethod = window.store.get('paymentMethod');
     // this.querySelectorAll('[data-payment-method]').forEach(button => {
@@ -164,26 +173,26 @@ class dzCheckoutCode extends dzEditableComponent {
       cartChanged: window.store.get('cartChanged'),
     };
 
-    setInterval(async () => {
-      const lastState = {
-        cartItems: window.store.get('cartItems') || {},
-        shippingMethod: window.store.get('shippingMethod') || {
-          amount: 0,
-        },
-        paymentMethod: window.store.get('paymentMethod') || {
-          amount: 0,
-        },
-        cartDiscount: window.store.get('cartDiscount') || {
-          amount: 0,
-        },
-        cartChanged: window.store.get('cartChanged'),
-      };
+    // setInterval(async () => {
+    //   const lastState = {
+    //     cartItems: window.store.get('cartItems') || {},
+    //     shippingMethod: window.store.get('shippingMethod') || {
+    //       amount: 0,
+    //     },
+    //     paymentMethod: window.store.get('paymentMethod') || {
+    //       amount: 0,
+    //     },
+    //     cartDiscount: window.store.get('cartDiscount') || {
+    //       amount: 0,
+    //     },
+    //     cartChanged: window.store.get('cartChanged'),
+    //   };
 
-      if (JSON.stringify(lastState) !== JSON.stringify(this.currentState)) {
-        this.currentState = JSON.parse(JSON.stringify(lastState));
-        await this._calculateSummary();
-      }
-    }, window.helpers.getDefaultConfig().intervalCartCheck);
+    //   if (JSON.stringify(lastState) !== JSON.stringify(this.currentState)) {
+    //     this.currentState = JSON.parse(JSON.stringify(lastState));
+    //     await this._calculateSummary();
+    //   }
+    // }, window.helpers.getDefaultConfig().intervalCartCheck);
 
     await this._listenButtons();
   }
@@ -195,6 +204,7 @@ class dzCheckoutCode extends dzEditableComponent {
       item.addEventListener('click', async (e) => {
         switch (fc) {
           case '_submitOrder':
+            await this._calculateSummary();
             await this._handleSubmitOrder();
             break;
         }
@@ -235,14 +245,20 @@ class dzCheckoutCode extends dzEditableComponent {
     }, window.helpers.getDefaultConfig().intervalCartCheck)
   }
 
+
   async _getValidOrder() {
     console.log('User',store.get('subUser'));
+    let cartProducts = window.store.get('cartProducts');
+    let cartDesc = await this.cartToDesc(cartProducts);
+    
     const order = {
       'cartItems': window.store.get('cartItems'),
-      'shippingAddress': document.querySelector('[name=shippingFullName]').value || '',
-      'shippingMethod': document.querySelector('[name=shipping_method]:checked').value || '',
-      'paymentMethod': document.querySelector('[name=payment_method]:checked').value || '',
-      'date': new Date().getTime()
+      'description': cartDesc,
+      'shippingAddress': '-',
+      'shippingMethod': '自取',
+      'paymentMethod':  'payPal',
+      'date': new Date().getTime(),
+      'total':this.total
     };
     
     if (!order.cartItems) {
@@ -272,6 +288,8 @@ class dzCheckoutCode extends dzEditableComponent {
     const order = await this._getValidOrder();
     if (isPaid)
       order.status = 'paid';
+    else
+      order.status = 'not paid';
     console.log('Before',order);
     if (!order) {
       return;
@@ -284,7 +302,8 @@ class dzCheckoutCode extends dzEditableComponent {
     await window.helpers.showModal(window.helpers.getDefaultConfig().messages.submitOrderSuccessfully);
 
     await this._cleanCart();
-    location.href = `${window.helpers.getDefaultConfig().urls.orderDetail}?id=${orderRes.data.data.id}`;
+    location.href="/user-profile.html";
+    // location.href = `${window.helpers.getDefaultConfig().urls.orderDetail}?id=${orderRes.data.data.id}`;
   }
 }
 

@@ -70,204 +70,233 @@
       
       <div class="bkghomepage">
          <header class="layout-header header-style3">
-            <div id="shopify-section-theme-header3" class="shopify-section" style="position: relative;">
-               <!-- /snippets/theme-header.liquid -->
-               <div class="header-wrap width-100" data-header-wrap>
-                  
-                  <div class="header hide-for-large" data-header data-header-base>
-                     <div class="header-container" data-header-content-mobile>
-                        <!-- /snippets/theme-header-mobile.liquid -->
-                        <div class="grid-x align-middle">
-                           <div class="cell auto">
-                              <div class="flex-container header-content-custom" data-header-left>
-                                 <a class="header-icon-search display-inline-block" data-toggle="search-box"><i class="fas fa-search"></i></a>
-                                 
-                              </div>
-                           </div>
-                           <div class="cell shrink header-content flex-container flex-dir-column align-center-middle">
-                              <div data-header-default>
-                                 <div class="mobile-logo"><a href="/"><img class="desktop-header-logo-image" src="/image/HC%20Logo-01%20%281%29.png" alt=""/></a></div>
-                              </div>
-                           </div>
-                           <div class="cell auto">
-                              <div class="flex-container cell-custom-header align-right" data-header-right>
-                                 
-                                 <div class="mini-cart mobile-header-user-nav display-inline-block">
-                                    <a class="display-block" data-toggle="mini-cart-info">
-                                       <i class="fas fa-shopping-cart"> <span class="header-counter-pill" data-cart-total>0</span></i>                                                                                                           
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="desktop-header show-for-large" data-desktop-header-top="118" data-sticky="{&quot;stickTo&quot;: &quot;body&quot;, &quot;stickyClass&quot;: &quot;sticky&quot;, &quot;responsive&quot;: {&quot;800&quot;: {&quot;disable&quot;: true}}}" style="position: relative; left: auto; width: 2256px;">
-                  <div class="mainheader-area">
-                     <div class="grid-container">
-                        <div class="desktop-header-content">
-                           <div class="top-row grid-x grid-margin-x">
-                              <div class="cell small-12 medium-4 large-4 xlarge-4 xxlarge-4 xxxlarge-4">
-                                 <div class="desktop-header-logo align-middle">
-                                    <h1 itemscope="" itemtype="" class="margin-0">
-                                       <a href="index.html" itemprop="url">
-                                       <img src="/image/HC%20Logo-01%20%281%29.png" style="padding-left: 2rem; " alt="">
-                                       </a>
-                                    </h1>
-                                 </div>
-                              </div>
-                              <div class="cell small-12 medium-8 large-8 xlarge-8 xxlarge-8 xxxlarge-8">
-                                 <div class="desktop-nav-list flex-container align-right">
-                                    <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
-                                       <a class="display-block" href="login.html">Sign In</a>
-                                    </div>
-                                    <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
-                                       <a class="display-block" href="register.html">Register</a>
-                                    </div>
+            <dz-user-panel>
+               <div id="shopify-section-theme-header3" class="shopify-section" style="position: relative;">
+                  <!-- /snippets/theme-header.liquid -->
+                  <div class="header-wrap width-100" data-header-wrap>
+                     
+                     <div class="header hide-for-large" data-header data-header-base>
+                        <div class="header-container" data-header-content-mobile>
+                           <!-- /snippets/theme-header-mobile.liquid -->
+                           <div class="grid-x align-middle">
+                              <div class="cell auto">
+                                 <div class="flex-container header-content-custom" data-header-left>
+                                    <a class="header-icon-search display-inline-block" data-toggle="search-box"><i class="fas fa-search"></i></a>
                                     
-                                    <div class="desktop-header-user-language desktop-header-language">
-                                       <!-- "snippets/gtranslate.liquid" was not rendered, the associated app was uninstalled --> 
-                                    </div>
-                                    <div class="desktop-header-user-nav desktop-header-search">
-                                       <a class="icon-search display-block" data-searchicon=""><i class="fas fa-search"></i></a>
-                                       <div class="desktop-header-search-content" data-searchbox="">
-                                          <form action="" method="get" role="search" data-ajax-search="" data-template="ajax-product-desktop">
-                                             <div class="search-box-desktop-form">
-                                                <div class="input-group">
-                                                   <input type="text" class="input-group-field control-input" name="q" value="" placeholder="Search products ..." aria-label="Search products ..." data-ajax-search-input="">
-                                                   <span class="input-group-button"><button type="submit" class="button clear"><i class="fas fa-search"></i></button></span>
-                                                </div>
-                                             </div>
-                                          </form>
-                                          <div class="searchbox-close" data-searchbox-close="">
-                                             <svg class="svg-icon">
-                                                <use xlink:href="#icon-close"></use>
-                                             </svg>
-                                          </div>
+                                 </div>
+                              </div>
+                              <div class="cell shrink header-content flex-container flex-dir-column align-center-middle">
+                                 <div data-header-default>
+                                    <div class="mobile-logo"><a href="/"><img class="desktop-header-logo-image" src="/image/HC%20Logo-01%20%281%29.png" alt=""/></a></div>
+                                 </div>
+                              </div>
+                              <div class="cell auto">
+                                    <div class="flex-container cell-custom-header align-right" data-header-right>
+                                       <div dz-user-no-login class="mini-cart mobile-header-user-nav display-inline-block">
+                                          <a class="display-block" data-toggle="mini-cart-info">
+                                             sign in                                                                                                           
+                                       </div>                                 
+                                       <div dz-user-logined class="mini-cart mobile-header-user-nav display-inline-block">
+                                          <a class="display-block" data-toggle="mini-cart-info">
+                                             <i class="fas fa-shopping-cart">
+                                          <span class="header-counter-pill" data-cart-total>0</span></i>                                                                                                           
                                        </div>
                                     </div>
-                                   
-                                    <div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
-                                       <a href="" class="display-block">
-                                       <em class="sli sli-heart">
-                                       <span class="header-counter-pill" data-wishlist-count="">0</span>
-                                       </em>
-                                       </a>
+   
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="desktop-header show-for-large" data-desktop-header-top="118" data-sticky="{&quot;stickTo&quot;: &quot;body&quot;, &quot;stickyClass&quot;: &quot;sticky&quot;, &quot;responsive&quot;: {&quot;800&quot;: {&quot;disable&quot;: true}}}" style="position: relative; left: auto; width: 2256px;">
+                     <div class="mainheader-area">
+                        <div class="grid-container">
+                           <div class="desktop-header-content">
+                              <div class="top-row grid-x grid-margin-x">
+                                 <div class="cell small-12 medium-4 large-4 xlarge-4 xxlarge-4 xxxlarge-4">
+                                    <div class="desktop-header-logo align-middle">
+                                       <h1 itemscope="" itemtype="" class="margin-0">
+                                          <a href="index.html" itemprop="url">
+                                          <img src="/image/HC%20Logo-01%20%281%29.png" style="padding-left: 2rem; " alt="">
+                                          </a>
+                                       </h1>
                                     </div>
-                                    <div class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
-                                       <a class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
-                                          <i class="fas fa-shopping-cart">
-                                             <!-- <svg class="svg-icon"><use xlink:href="#iconfinder_Basket_2205960" /></svg> -->
-                                             <span class="header-counter-pill mini-cart-total" data-cart-total="">0</span>
-                                          </i>                                                                                       
-                                       </a>
+                                 </div>
+                                 <div class="cell small-12 medium-8 large-8 xlarge-8 xxlarge-8 xxxlarge-8">
+                                    <div class="desktop-nav-list flex-container align-right">
+                                       <!-- <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-login dropdown menu">
+                                          <a class="icon-account display-block" data-toggle="account-box-desktop" aria-controls="account-box-desktop" data-is-focus="false" data-yeti-box="account-box-desktop" aria-haspopup="true" aria-expanded="false" id="uebz4u-dd-anchor" style="cursor: pointer;">Sign In</a>  
+                                          <ul class="dropdown-pane no-bullet has-position-bottom has-alignment-left" id="account-box-desktop" data-dropdown="" data-hover="true" data-hover-pane="true" aria-labelledby="uebz4u-dd-anchor" aria-hidden="true" data-yeti-box="account-box-desktop" data-resize="account-box-desktop" data-u="gmvpk1-u" data-events="resize">
+                                             <li class="not-login">
+                                                <div class="account-login">
+                                                   <form method="post" action="" id="customer_login_box" accept-charset="UTF-8">
+                                                      <input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓"><input type="email" name="customer[email]" class="account-field " placeholder="Email" autocapitalize="off" autocomplete="email"><input type="password" value="" name="customer[password]" class="account-field " placeholder="Password" autocomplete="current-password"><a href="" class="account-login-recover">Forgot your password?</a>
+                                                      <div class="sign-in_create-account">
+                                                         <button type="submit" class="button account-login-submit">Sign In</button>
+                                                         <a class="account-login-register" href="register.html">Create account</a>
+                                                      </div>
+                                                   </form>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                       </div> -->
+                                       <div dz-user-no-login class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                          <a class="display-block" href="login.html">Sign In</a>
+                                       </div>
+                                       <div dz-user-no-login class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                          <a class="display-block" href="register.html">Register</a>
+                                       </div>
+                                       <div dz-user-logined class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                          <a class="display-block" href="user-profile.html"><span dz-user-name></span></a>
+                                       </div>
+                                       <div dz-user-logined class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                          <a class="display-block" href="#" dz-logout>Logout</a>
+                                       </div>
+                                       
+                                       <div class="desktop-header-user-language desktop-header-language">
+                                          <!-- "snippets/gtranslate.liquid" was not rendered, the associated app was uninstalled --> 
+                                       </div>
+                                       <div class="desktop-header-user-nav desktop-header-search">
+                                          <a class="icon-search display-block" data-searchicon=""><i class="fas fa-search"></i></a>
+                                          <div class="desktop-header-search-content" data-searchbox="">
+                                             <form action="" method="get" role="search" data-ajax-search="" data-template="ajax-product-desktop">
+                                                <div class="search-box-desktop-form">
+                                                   <div class="input-group">
+                                                      <input type="text" class="input-group-field control-input" name="q" value="" placeholder="Search products ..." aria-label="Search products ..." data-ajax-search-input="">
+                                                      <span class="input-group-button"><button type="submit" class="button clear"><i class="fas fa-search"></i></button></span>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                             <div class="searchbox-close" data-searchbox-close="">
+                                                <svg class="svg-icon">
+                                                   <use xlink:href="#icon-close"></use>
+                                                </svg>
+                                             </div>
+                                          </div>
+                                       </div>
+                                      
+                                       <div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
+                                          <a href="" class="display-block">
+                                          <em class="sli sli-heart">
+                                          <span class="header-counter-pill" data-wishlist-count="">0</span>
+                                          </em>
+                                          </a>
+                                       </div>
+                                       <div dz-user-logined class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
+                                          <a class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
+                                             <i class="fas fa-shopping-cart">
+                                                <!-- <svg class="svg-icon"><use xlink:href="#iconfinder_Basket_2205960" /></svg> -->
+                                                <span class="header-counter-pill mini-cart-total" data-cart-total="">0</span>
+                                             </i>                                                                                       
+                                          </a>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="mainmenu-area">
-                     <div class="grid-container">
-                        <div class="desktop-header-content">
-                           <div class="bottom-row">
-                              <!-- /snippets/theme-header-menu.liquid -->
-                              <div class="header-menu horizontal">
-                                 <ul class="header-menu-content dropdown menu horizontal clearfix" data-hover-delay="0" data-closing-time="0" data-dropdown-menu="" role="menubar" data-d="1owuuc-d">
-                                    <li class="header-menu-root active" role="menuitem">
-                                       <a href="index.html" class="header-menu-root-link" data-handle="主頁">主頁</a>
-                                    </li>
-                                    <li class="header-menu-root is-dropdown-submenu-parent opens-right" role="menuitem" aria-haspopup="true" aria-label="天然草本韓國護膚產品">
-                                       <a href="products.html" class="header-menu-root-link" data-handle="天然草本韓國護膚產品">產品及服務</a>
-                                       <ul class="header-menu-dropdown row-5 submenu is-dropdown-submenu first-sub vertical" data-dropdown-panel-control="" data-submenu="" role="menubar" style="left: -518px; width: 2255px;">
-                                          <li class="header-menu-dropdown-container grid-container is-submenu-item is-dropdown-submenu-item" role="menuitem">
-                                             <div class="grid-x grid-padding-x grid-margin-y small-up-5 large-up-5">
-                                                <div class="cell vertical header-menu-submenu">
-                                                   <div class="linklist-title">
-                                                      【美容】
-                                                      <p></p>
+                     <div class="mainmenu-area">
+                        <div class="grid-container">
+                           <div class="desktop-header-content">
+                              <div class="bottom-row">
+                                 <!-- /snippets/theme-header-menu.liquid -->
+                                 <div class="header-menu horizontal">
+                                    <ul class="header-menu-content dropdown menu horizontal clearfix" data-hover-delay="0" data-closing-time="0" data-dropdown-menu="" role="menubar" data-d="1owuuc-d">
+                                       <li class="header-menu-root active" role="menuitem">
+                                          <a href="index.html" class="header-menu-root-link" data-handle="主頁">主頁</a>
+                                       </li>
+                                       <li class="header-menu-root is-dropdown-submenu-parent opens-right" role="menuitem" aria-haspopup="true" aria-label="天然草本韓國護膚產品">
+                                          <a href="products.html" class="header-menu-root-link" data-handle="天然草本韓國護膚產品">產品及服務</a>
+                                          <ul class="header-menu-dropdown row-5 submenu is-dropdown-submenu first-sub vertical" data-dropdown-panel-control="" data-submenu="" role="menubar" style="left: -518px; width: 2255px;">
+                                             <li class="header-menu-dropdown-container grid-container is-submenu-item is-dropdown-submenu-item" role="menuitem">
+                                                <div class="grid-x grid-padding-x grid-margin-y small-up-5 large-up-5">
+                                                   <div class="cell vertical header-menu-submenu">
+                                                      <div class="linklist-title">
+                                                         【美容】
+                                                         <p></p>
+                                                      </div>
+                                                      <ul>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="products.html">Awish</a>
+                                                         </li>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="products.html">Lagny</a>
+                                                         </li>
+                                                      </ul>
                                                    </div>
-                                                   <ul>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="products.html">Awish</a>
-                                                      </li>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="products.html">Lagny</a>
-                                                      </li>
-                                                   </ul>
+                                                   <div class="cell vertical header-menu-submenu">
+                                                      <div class="linklist-title">
+                                                         【香薰】
+                                                         <p></p>
+                                                      </div>
+                                                      <ul>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="products.html">媒介油</a>
+                                                         </li>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="products.html">精油</a>
+                                                         </li>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="products.html">純露</a>
+                                                         </li>                                                      
+                                                      </ul>
+                                                   </div>
+                                                   <!-- <div class="cell vertical header-menu-submenu">
+                                                      <div class="linklist-title">
+                                                         【網上美容課程】
+                                                         <p></p>
+                                                      </div>
+                                                      <ul>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="workshop.html">網上美容課程</a>
+                                                         </li>                                                      
+                                                      </ul>
+                                                   </div>
+                                                   <div class="cell vertical header-menu-submenu">
+                                                      <div class="linklist-title">
+                                                         【教材訂購】
+                                                         <p></p>
+                                                      </div>
+                                                      <ul>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="booking.html">教材訂購</a>
+                                                         </li>
+                                                                                                             
+                                                      </ul>
+                                                   </div>
+                                                   <div class="cell vertical header-menu-submenu">
+                                                      <div class="linklist-title">
+                                                         【美容師轉介服務】
+                                                         <p></p>
+                                                      </div>
+                                                      <ul>
+                                                         <li class="level1-menu " role="menuitem">
+                                                            <a href="referral.html">美容師轉介服務</a>
+                                                         </li>                                                                                                          
+                                                      </ul>
+                                                   </div>                                                                                                                                             -->
                                                 </div>
-                                                <div class="cell vertical header-menu-submenu">
-                                                   <div class="linklist-title">
-                                                      【香薰】
-                                                      <p></p>
-                                                   </div>
-                                                   <ul>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="products.html">媒介油</a>
-                                                      </li>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="products.html">精油</a>
-                                                      </li>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="products.html">純露</a>
-                                                      </li>                                                      
-                                                   </ul>
-                                                </div>
-                                                <!-- <div class="cell vertical header-menu-submenu">
-                                                   <div class="linklist-title">
-                                                      【網上美容課程】
-                                                      <p></p>
-                                                   </div>
-                                                   <ul>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="workshop.html">網上美容課程</a>
-                                                      </li>                                                      
-                                                   </ul>
-                                                </div>
-                                                <div class="cell vertical header-menu-submenu">
-                                                   <div class="linklist-title">
-                                                      【教材訂購】
-                                                      <p></p>
-                                                   </div>
-                                                   <ul>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="booking.html">教材訂購</a>
-                                                      </li>
-                                                                                                          
-                                                   </ul>
-                                                </div>
-                                                <div class="cell vertical header-menu-submenu">
-                                                   <div class="linklist-title">
-                                                      【美容師轉介服務】
-                                                      <p></p>
-                                                   </div>
-                                                   <ul>
-                                                      <li class="level1-menu " role="menuitem">
-                                                         <a href="referral.html">美容師轉介服務</a>
-                                                      </li>                                                                                                          
-                                                   </ul>
-                                                </div>                                                                                                                                             -->
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                   
-                                    <li class="header-menu-root " role="menuitem">
-                                       <a href="aboutus.html" class="header-menu-root-link" data-handle="關於我們">關於我們</a>
-                                    </li>
-                                    <li class="header-menu-root " role="menuitem">
-                                       <a href="contactus.html" class="header-menu-root-link" data-handle="聯絡我們">聯絡我們</a>
-                                    </li>
-                                 </ul>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                      
+                                       <li class="header-menu-root " role="menuitem">
+                                          <a href="aboutus.html" class="header-menu-root-link" data-handle="關於我們">關於我們</a>
+                                       </li>
+                                       <li class="header-menu-root " role="menuitem">
+                                          <a href="contactus.html" class="header-menu-root-link" data-handle="聯絡我們">聯絡我們</a>
+                                       </li>
+                                    </ul>
+                                 </div>
                               </div>
                            </div>
                         </div>
                      </div>
+                     <div class="endofheader"></div>
                   </div>
-                  <div class="endofheader"></div>
                </div>
-            </div>
+               </dz-user-panel>
          </header>
          <div class="searchresult-area" data-ajax-search-result="" style="display: none;"></div>
 
@@ -356,25 +385,25 @@
                                                 <label class="input-label">Quantity:</label>
                                                 <div class="product-quantity">
                                                     <div class="input-group" data-number-group="" data-discount-number-group="" data-min="1">
-                                                      <span class="input-group-label pointer bot" data-minus="" style="cursor: pointer;">-</span>
-                                                      <input type="text" name="quantity" value="1" class="input-group-field input-control" data-number="">
-                                                      <span class="input-group-label pointer top" data-plus="" style="cursor: pointer;">+</span>
+                                                      <span class="input-group-label pointer bot" data-minus="" dz-func="_minusQty" style="cursor: pointer;">-</span>
+                                                      <input type="text" name="quantity" value="1" dz-quantity class="input-group-field input-control" data-number="">
+                                                      <span class="input-group-label pointer top" data-plus="" dz-func="_addQty" style="cursor: pointer;">+</span>
                                                     </div>
                                                 </div>
                                             </div> 
                                             
                                              <div class="group-action">
-                                                <button type="normal" name="add" class="product-add-cart" data-placeholder="Buy Now" data-product-buy-now="">
+                                                <div type="normal" name="add" dz-func="_buy" class="product-add-cart" data-placeholder="Buy Now" data-product-buy-now="">
                                                 <span data-product-add-cart-text="">Buy Now
                                                 </span>
                                                 <small class="progress secondary"><small class="progress-meter"></small></small>
-                                                </button>
+                                                </div>
                                                 <div class=" group-button-custom">
                                                    <div class="cell small-6 large-6">
-                                                      <button type="submit" name="add" class="product-add-cart" data-product-add-cart-form-discount="" data-product-add-cart="" data-placeholder="Add To Bag" data-adding-message="Adding to Bag" data-added-message="Added to Bag">
-                                                      <span data-product-add-cart-text="">Add to Bag</span>
+                                                      <div type="normal"  dz-func="_addToCart" class="product-add-cart" data-placeholder="Add To Bag" >
+                                                      <span>Add to Bag</span>
                                                       <small class="progress secondary"><small class="progress-meter"></small></small>
-                                                      </button>
+                                                      </div>
                                                    </div>                                                         
                                                 </div>
                                              </div>

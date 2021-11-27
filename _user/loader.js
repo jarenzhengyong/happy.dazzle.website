@@ -10,5 +10,4 @@ await Dazzle.initGlobalVars();
 await Dazzle.dynamicLoadComponents();
 
 let dzBlock = document.createElement('dz-block');
-console.log(dzBlock,'10000')
 document.querySelector('body').appendChild(dzBlock);

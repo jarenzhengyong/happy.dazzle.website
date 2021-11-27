@@ -147,7 +147,7 @@ class dzProductDetailCode extends dzEditableComponent {
   async _addToCart() {
     const productId = this.getProductId();
     const cartItems = this._getStore('cartItems') || {};
-    const purchaseQuantity = Number(this.querySelector('[flag-quantity]').value);
+    const purchaseQuantity = Number(this.querySelector('[dz-quantity]').value);
     const updatedCartItems = {
       ...cartItems,
       [productId]: {

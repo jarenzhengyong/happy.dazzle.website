@@ -1,3 +1,10 @@
+.product-add-cart span {
+  display: inline-block;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+}
 /* vietnamese */
 @font-face {
   font-family: 'Bangers';

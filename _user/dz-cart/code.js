@@ -1,3 +1,4 @@
+// import '../dz-cart-item/code.js';
 class dzCartCode extends dzEditableComponent {
   static get is() {
     return 'dz-cart';
@@ -80,6 +81,7 @@ class dzCartCode extends dzEditableComponent {
     }
 
     document.addEventListener('cart-change',e=>{
+      console.log('Cart Change');
         this._updateCartInfo();
     });
 
@@ -120,7 +122,7 @@ class dzCartCode extends dzEditableComponent {
 
     const dataWrapper = this.querySelector('[data-wrapper]');
     // const cartItemTemplate = this.querySelector('template.cart-item-template').innerHTML;
-    const cartItemTemplate = this._template['cart-item-template'];
+    const cartItemTemplate = this._template['cart-item'];
     let htmlContent = '';
     let subTotal = 0;
     dataWrapper.innerHTML = '';
@@ -130,42 +132,53 @@ class dzCartCode extends dzEditableComponent {
       } catch (e) {
         item.cartQuantity = 1;
       }
-
+      if (!item.shortDesc) 
+        item.shortDesc = '';
       item.subTotal = item.cartQuantity * item.price;
       subTotal = subTotal + item.subTotal;
 
       htmlContent  =this.productManager.replaceToken(item, cartItemTemplate);
-      let elm = this.htmlToElement(htmlContent);
+      let elm = document.createElement('dz-cart-item');
+      elm.innerHTML = htmlContent;
+      // let elm = this.htmlToElement(htmlContent);
       elm.id = item.id;
-      new ItemPackage(elm);
+      // new ItemPackage(elm);
+      // new dzCartItemCode(elm);
       dataWrapper.appendChild(elm);
     })
     // dataWrapper.innerHTML = htmlContent;
 
     const shippingMethod = window.store.get('shippingMethod') || {
       type: 'free',
-      amount: 0
+      amount: 15
     }
+    window.store.set('shippigMethod',shippingMethod);
 
     const cartDiscount = window.store.get('cartDiscount') || {
       code: '',
-      amount: 50
+      amount: 0
+    }
+    window.store.set('cartDiscount',cartDiscount);
+    
+    const cartItemTotal = products.length;
+    try {
+      if (!products.length) {
+        this.querySelector('[dz-cart-no-item]').style.visibility = "visible";      
+        this.querySelector('[dz-cart-have-item]').style.visibility = "hidden";      
+      } else {
+        this.querySelector('[dz-cart-no-item]').style.visibility = "hidden";      
+        this.querySelector('[dz-cart-have-item]').style.visibility = "visible";      
+        
+      }
+      this.updateAttrValue('dz-order-subtotal',`${window.helpers.formatNumber(subTotal)}`);
+      // this.updateAttrValue('dz-cart-item-total',cartItemTotal);
+      // this.updateAttrValue('dz-order-shipping',`$${window.helpers.formatNumber(shippingMethod.amount)}`);
+      // this.updateAttrValue('dz-order-discount',`$${window.helpers.formatNumber(cartDiscount.amount)}`);
+      this.updateAttrValue('dz-order-total', `${window.helpers.formatNumber(subTotal + shippingMethod.amount - cartDiscount.amount)}`);
+    }catch(e){
+        console.log('Cart Update Error');
     }
 
-    const cartItemTotal = products.length;
-    if (!products.length) {
-      this.querySelector('[dz-cart-no-item]').style.visibility = "visible";      
-      this.querySelector('[dz-cart-have-item]').style.visibility = "hidden";      
-    } else {
-      this.querySelector('[dz-cart-no-item]').style.visibility = "hidden";      
-      this.querySelector('[dz-cart-have-item]').style.visibility = "visible";      
-      
-    }
-    this.updateAttrValue('dz-order-subtotal',`$${window.helpers.formatNumber(subTotal)}`);
-    this.updateAttrValue('dz-cart-item-total',cartItemTotal);
-    this.updateAttrValue('dz-order-shipping',`$${window.helpers.formatNumber(shippingMethod.amount)}`);
-    this.updateAttrValue('dz-order-discount',`$${window.helpers.formatNumber(cartDiscount.amount)}`);
-    this.updateAttrValue('dz-order-total', `$${window.helpers.formatNumber(subTotal + shippingMethod.amount - cartDiscount.amount)}`);
   }
 
   render() {
