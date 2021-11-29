@@ -33,16 +33,17 @@ class dzForgotPasswordCode extends dzEditableComponent {
 
         const formItems = window.domQuery(form).serializeArray();
         const email = formItems[0].value;
-
         try {
           await authUser().forgotPassword({
             email
           });
 
-          await window.helpers.showModal(window.helpers.getDefaultConfig().messages.passwordResetWasSent);
+          //await window.helpers.showModal(window.helpers.getDefaultConfig().messages.passwordResetWasSent);
+          window.helpers.showModal(window.helpers.getDefaultConfig().messages.passwordResetWasSent);
           setTimeout(() => {
             location.href = `${window.helpers.getDefaultConfig().urls.forgotPasswordConfirmation}?${window.helpers.queryUrlFromObject({email})}`;
-          });
+            console.log(location.href)
+          }, 1000);
         } catch (error) {
           console.error(error.response.data.error.code);
           try {

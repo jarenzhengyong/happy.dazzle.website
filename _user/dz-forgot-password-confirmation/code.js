@@ -50,7 +50,8 @@ class dzForgotPasswordConfirmationCode extends dzEditableComponent {
             'password': formData.password,
           });
 
-          await window.helpers.showModal(window.helpers.getDefaultConfig().messages.passwordWasChangedSuccessfully);
+          //await window.helpers.showModal(window.helpers.getDefaultConfig().messages.passwordWasChangedSuccessfully);
+          window.helpers.showModal(window.helpers.getDefaultConfig().messages.passwordWasChangedSuccessfully);
           setTimeout(() => {
             location.href = window.helpers.getDefaultConfig().urls.login;
           });
