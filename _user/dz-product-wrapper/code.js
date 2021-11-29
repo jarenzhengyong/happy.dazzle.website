@@ -58,6 +58,7 @@ class dzProductWrapperCode extends dzEditableComponent{
        
       },
     };
+
     if (Object.keys(filterConditions).length) {
       if (filterConditions.keyword) {
         this.query.match.title = {
@@ -71,9 +72,12 @@ class dzProductWrapperCode extends dzEditableComponent{
       }
     } else {
       this.query = {
-        'match': {
+        /* 'match': {
           'category':'product'
-        }
+        } */
+        'match': {
+          'match_all': []
+        } 
       };
     }
 

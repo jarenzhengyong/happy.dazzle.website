@@ -104,7 +104,6 @@ class dzProductDetailCode extends dzEditableComponent {
     }catch(e){
       metaId = null;
     }
-
     let id;
     // console.log('Hash',window.location.hash,window.location.pathname);
     const queryString = window.location.search;
@@ -212,7 +211,7 @@ class dzProductDetailCode extends dzEditableComponent {
   async getItem(){
       let item = this.getAttribute('item') || null;
       if (!item)
-          this.item = await  this.productManager.getDataByES(this.dataId);
+          this.item = await this.productManager.getDataByES(this.dataId);
       else 
           this.item = JSON.parse(item);
   }
@@ -226,7 +225,6 @@ class dzProductDetailCode extends dzEditableComponent {
       let template = this.innerHTML;
       let html = this.productManager.replaceToken(this.item,this.innerHTML);
       this.innerHTML = html;
-      
       // this.querySelectorAll('[dz-field]').forEach(elm=>{
       //     let myField = elm.getAttribute('dz-field');
       //     let myValue = this.item[myField];
