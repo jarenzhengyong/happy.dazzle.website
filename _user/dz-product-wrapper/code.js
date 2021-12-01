@@ -74,9 +74,11 @@ class dzProductWrapperCode extends dzEditableComponent{
       this.query = {
         /* 'match': {
           'category':'product'
-        }, */
+        }, 
         'match': {
           'category':'美容產品'
+        },*/
+        "match_all": {
         }
         /*'match': {
           'match_all': []
@@ -89,7 +91,7 @@ class dzProductWrapperCode extends dzEditableComponent{
     let template = this._template['product-item'];
     const defaultImage = window.helpers.getDefaultConfig().urls.defaultImage;
     console.log('Search',json);
-    this.itemManager.searchDataByES(json).then(items => {
+    this.itemManager.searchDataByES(json,12).then(items => {
       // Sort items if it was defined in filterConditions
       console.log(items);
       items = this.formatData(items);
