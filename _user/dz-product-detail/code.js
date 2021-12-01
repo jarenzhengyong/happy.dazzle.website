@@ -222,6 +222,7 @@ class dzProductDetailCode extends dzEditableComponent {
 
   async reloadData(){
     let item = await this.getItem();
+    console.log(this.item, '9900990')
       let template = this.innerHTML;
       let html = this.productManager.replaceToken(this.item,this.innerHTML);
       this.innerHTML = html;

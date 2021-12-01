@@ -410,11 +410,11 @@
    </div>
 </template>
 <template id="product-item">
-   <div class="collection-product-item cell">
+   <div class="collection-product-item cell" style="box-sizing: border-box;">
       <div class="product-grid" data-product-layout="">
          <div class="product-item" data-product-item="">
             <div class="product-item-thumb">
-               <a href="/productdetail.html#[[id]]" class="display-block"><img src="/image/beauty/awish/AWMU009_%20%E6%A1%91%E6%A4%B9%E4%BA%AE%E7%99%BD%E7%9C%BC%E8%86%9C.jpg" data-src="/image/beauty/awish/AWMU009_%20%E6%A1%91%E6%A4%B9%E4%BA%AE%E7%99%BD%E7%9C%BC%E8%86%9C.jpg"  class="product-item-image lazyloaded" data-viewed-image=""></a>
+               <a href="/productdetail.html#[[id]]" class="display-block"><img src="[[image]]" data-src="/image/beauty/awish/AWMU009_%20%E6%A1%91%E6%A4%B9%E4%BA%AE%E7%99%BD%E7%9C%BC%E8%86%9C.jpg"  class="product-item-image lazyloaded" data-viewed-image=""></a>
                <div class="product-item-label-list"></div>                                                
                <div class="cart-button bottom-center">
                   <div class="product-item-buttons"><a href="/productdetail.html#[[id]]" class="product-item-button product-item-button-cart" title="Add To Bag" disabled="disabled"><em class="sli sli-basket"></em> <span>Choose Options</span></a></div>
@@ -427,7 +427,7 @@
                         <a href="productdetail.html">[[title]]</a>
                      </h4>                                                      
                   </div>
-                  <div class="product-item-price cell small-12 medium-6 large-4 xlarge-4 xxlarge-4 xxxlarge-3"><span class="product-item-price-default">$450.00</span></div>
+                  <div class="product-item-price cell small-12 medium-6 large-4 xlarge-4 xxlarge-4 xxxlarge-3"><span class="product-item-price-default">$[[price]]</span></div>
                </div>
             </div>
          </div>

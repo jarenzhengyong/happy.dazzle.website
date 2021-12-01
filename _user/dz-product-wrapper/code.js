@@ -74,10 +74,13 @@ class dzProductWrapperCode extends dzEditableComponent{
       this.query = {
         /* 'match': {
           'category':'product'
-        } */
+        }, */
         'match': {
+          'category':'美容產品'
+        }
+        /*'match': {
           'match_all': []
-        } 
+        } */
       };
     }
 
