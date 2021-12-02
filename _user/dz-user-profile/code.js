@@ -23,19 +23,19 @@ class dzUserProfileCode extends dzEditableComponent {
         'firstname': 'required',
         'lastname': 'required',
         'email': 'required',
-        'month': 'required',
-        'day': 'required',
-        'year': 'required',
-        'gender': 'required',
+        //'month': 'required',
+        //'day': 'required',
+        //'year': 'required',
+        //'gender': 'required',
       },
       messages: {
         'firstname': window.helpers.getDefaultConfig().messages.requiredField,
         'lastname': window.helpers.getDefaultConfig().messages.requiredField,
         'email': window.helpers.getDefaultConfig().messages.requiredField,
-        'month': window.helpers.getDefaultConfig().messages.requiredField,
-        'day': window.helpers.getDefaultConfig().messages.requiredField,
-        'year': window.helpers.getDefaultConfig().messages.requiredField,
-        'gender': window.helpers.getDefaultConfig().messages.requiredField,
+        //'month': window.helpers.getDefaultConfig().messages.requiredField,
+        //'day': window.helpers.getDefaultConfig().messages.requiredField,
+        //'year': window.helpers.getDefaultConfig().messages.requiredField,
+        //'gender': window.helpers.getDefaultConfig().messages.requiredField,
       },
       submitHandler: async (form, event) => {
         event.preventDefault();
@@ -51,13 +51,12 @@ class dzUserProfileCode extends dzEditableComponent {
             profile: {
               firstName: mapping.firstname,
               lastName: mapping.lastname,
-              birthday: `${mapping.year}/${mapping.month}/${mapping.day}`,
-              gender: mapping.gender
+              //birthday: `${mapping.year}/${mapping.month}/${mapping.day}`,
+              //gender: mapping.gender
             },
             publicJsonOther: {},
             privateJsonOther: {}
           });
-
           await window.helpers.showModal(window.helpers.getDefaultConfig().messages.profileWasUpdated);
         } catch (err) {
           await window.helpers.showModal(window.helpers.getDefaultConfig().messages.commonError);
@@ -119,10 +118,10 @@ class dzUserProfileCode extends dzEditableComponent {
     this.querySelector('[name=lastname]').value = profile.lastName;
     this.querySelector('[name=email]').value = profile.email;
 
-    this.querySelector('[name=day]').value = profile.birthday?.split('/')[2] || '';
+    /* this.querySelector('[name=day]').value = profile.birthday?.split('/')[2] || '';
     this.querySelector('[name=month]').value = profile.birthday?.split('/')[1] || '';
-    this.querySelector('[name=year]').value = profile.birthday?.split('/')[0] || '';
-
+    this.querySelector('[name=year]').value = profile.birthday?.split('/')[0] || ''; */
+    console.log(profile,'099090')
     this.querySelector('[name=gender]').value = profile.gender;
   }
 

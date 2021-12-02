@@ -194,7 +194,8 @@ class dzCartItemCode extends dzEditableComponent {
 
   _onClickItemImage() {
     const itemId = this.getAttribute('id');
-    location.href = `/product/${itemId}`;
+    //location.href = `/product/${itemId}`;
+    location.href = `/productdetail.html#${itemId}`;
   }
 
   async _onClickRemoveFromCart() {

@@ -79,7 +79,7 @@ class dzCartCode extends dzEditableComponent {
       },
       cartChanged: window.store.get('cartChanged'),
     }
-
+    console.log(this.currentCartState, '09900909')
     document.addEventListener('cart-change',e=>{
       console.log('Cart Change');
         this._updateCartInfo();

@@ -82,7 +82,7 @@ class dzUserPanelCode extends dzEditableComponent {
     } catch (e) {
       console.log(e);
     }
-
+    console.log(authUser,'0909090')
     const placeHolder = this.querySelector('.user-panel-placeholder');
 
       if (authUser) {
@@ -102,7 +102,7 @@ class dzUserPanelCode extends dzEditableComponent {
         });
 
         // this.coreElement['dz-user-name'].innerHTML = '';
-
+        this.coreElement['dz-user-name'][0].innerHTML = authUser.profile.email;
       } else {
         this.coreElement['dz-user-no-login'].forEach(item=>{
           item.style.visibility ='visible';
