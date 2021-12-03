@@ -425,9 +425,7 @@
                                        <a class="display-block" href="#" dz-logout>Logout</a>
                                     </div>
                                     
-                                    <div class="desktop-header-user-language desktop-header-language">
-                                       <!-- "snippets/gtranslate.liquid" was not rendered, the associated app was uninstalled --> 
-                                    </div>
+                                    <div class="desktop-header-user-language desktop-header-language"></div>
                                     <div class="desktop-header-user-nav desktop-header-search">
                                        <a class="icon-search display-block" data-searchicon=""><i class="fas fa-search"></i></a>
                                        <div class="desktop-header-search-content" data-searchbox="">
@@ -447,21 +445,22 @@
                                        </div>
                                     </div>
                                    
-                                    <div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
+                                     <!--<div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
                                        <a href="" class="display-block">
                                        <em class="sli sli-heart">
                                        <span class="header-counter-pill" data-wishlist-count="">0</span>
                                        </em>
                                        </a>
-                                    </div>
-                                    <div dz-user-logined class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
-                                       <a class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
-                                          <i class="fas fa-shopping-cart">
-                                             <!-- <svg class="svg-icon"><use xlink:href="#iconfinder_Basket_2205960" /></svg> -->
-                                             <span class="header-counter-pill mini-cart-total" data-cart-total="">0</span>
-                                          </i>                                                                                       
-                                       </a>
-                                    </div>
+                                    </div> -->
+                                    <dz-cart-status>
+                                       <div class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
+                                          <div  class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
+                                             <i class="fas fa-shopping-cart">
+                                                <span class="header-counter-pill mini-cart-total cart-counter" data-cart-total="">0</span>
+                                             </i>                                                                                       
+                                          </div>
+                                       </div>
+                                    </dz-cart-status>
                                  </div>
                               </div>
                            </div>
@@ -572,6 +571,11 @@
          </header>
          <div class="searchresult-area" data-ajax-search-result="" style="display: none;"></div>
             <main role="main" class="layout-main">
+               <div style="margin: 2rem 1rem;padding-bottom:1rem;border-bottom: 1px solid #f5f5f5;">
+                  <span style="margin: 1rem 5rem 0 5rem;font-size: 30px;color:green;font-weight: bold;">1、购物车</span>
+                  <span style="margin: 1rem 5rem 0 5rem;font-size: 30px;">2、填写和提交订单信息</span>
+                  <span style="margin: 1rem 5rem 0 5rem;font-size: 30px;">3、成功提交订单</span>
+               </div>
              <dz-cart>
                <div dz-cart-have-item class="shopping-cart" style="margin: 5rem;">
                   <div class="column-labels">
@@ -629,10 +633,9 @@
                         <div class="totals-value">
                            <dz-checkout>
                               <button class="buy-product" dz-func="_submitOrder">
-                                 購買
+                                 下单结算
                               </button>                      
                            </dz-checkout>
- 
                         </div>
                        </div>
 
@@ -883,8 +886,35 @@
                <!-- /snippets/cart-mini-template.liquid -->
                <div class="grid-container">
                   <div class="mini-cart-inner-desktop">
-                     <h2 class="mini-cart-title">My shopping bag ( 0 )</h2>
-                     <div class="mini-cart-empty">You have no item in your cart.</div>
+                     <dz-cart-status>
+                        <h2 class="mini-cart-title">My shopping bag ( <span class="cart-counter" data-cart-total="">0</span> )</h2>
+                     </dz-cart-status>
+                     <dz-cart>
+                        <div dz-cart-have-item>
+                           <div data-wrapper=""></div>
+                           <div class="totals">
+                              <div class="totals-item">
+                                 <label>小計</label>
+                                 <div class="totals-value" dz-order-subtotal="" id="cart-subtotal">71.97</div>
+                              </div>						
+                              <div class="totals-item">
+                                 <dz-cart-shipping-method>
+                                    <label>運費</label>
+                                    <div class="totals-value" dz-order-shipping="" id="cart-shipping">15.00</div>
+                                 </dz-cart-shipping-method>
+                              </div>
+                              <div class="totals-item totals-item-total">
+                                 <label>總額</label>
+                                 <div class="totals-value" dz-order-total="" id="cart-total">90.57</div>
+                              </div>
+                              <div class="totals-item">
+                                 <div class="totals-value">
+                                    <button class="buy-product">下单结算</button>  
+                                 </div>
+                              </div>
+                        </div>
+                     <div class="mini-cart-empty" dz-cart-no-item>You have no item in your cart.</div>
+                     </dz-cart>
                      <div class="mini-cart-empty-message">
                         <!--?xml version="1.0" encoding="iso-8859-1"?-->
                         <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
