@@ -28,7 +28,6 @@ class dzCartShippingAddressCode extends dzEditableComponent {
         currentData.shippingFullName = subUser['firstName'] +' '+subUser['lastName'];
         currentData.shippingPhone = subUser['phone'];
     }
-
     this.querySelector('[name=shippingFullName]').value = currentData.shippingFullName || '';
     this.querySelector('[name=shippingPhone]').value = currentData.shippingPhone || '';
     this.querySelector('[name=shippingAddress]').value = currentData.shippingAddress || '';

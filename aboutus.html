@@ -93,6 +93,7 @@
       
       <div class="bkghomepage">
          <header class="layout-header header-style3">
+            <dz-user-panel>
             <div id="shopify-section-theme-header3" class="shopify-section" style="position: relative;">
                <!-- /snippets/theme-header.liquid -->
                <div class="header-wrap width-100" data-header-wrap>
@@ -113,13 +114,18 @@
                               </div>
                            </div>
                            <div class="cell auto">
-                              <div class="flex-container cell-custom-header align-right" data-header-right>
-                                 
-                                 <div class="mini-cart mobile-header-user-nav display-inline-block">
-                                    <a class="display-block" data-toggle="mini-cart-info">
-                                       <i class="fas fa-shopping-cart"> <span class="header-counter-pill" data-cart-total>0</span></i>                                                                                                           
+                                 <div class="flex-container cell-custom-header align-right" data-header-right>
+                                    <div dz-user-no-login class="mini-cart mobile-header-user-nav display-inline-block">
+                                       <a class="display-block" data-toggle="mini-cart-info">
+                                          sign in                                                                                                           
+                                    </div>                                 
+                                    <div dz-user-logined class="mini-cart mobile-header-user-nav display-inline-block">
+                                       <a class="display-block" data-toggle="mini-cart-info">
+                                          <i class="fas fa-shopping-cart">
+                                       <span class="header-counter-pill" data-cart-total>0</span></i>                                                                                                           
+                                    </div>
                                  </div>
-                              </div>
+
                            </div>
                         </div>
                      </div>
@@ -157,16 +163,20 @@
                                           </li>
                                        </ul>
                                     </div> -->
-                                    <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                    <div dz-user-no-login class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
                                        <a class="display-block" href="login.html">Sign In</a>
                                     </div>
-                                    <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                    <div dz-user-no-login class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
                                        <a class="display-block" href="register.html">Register</a>
                                     </div>
-                                    
-                                    <div class="desktop-header-user-language desktop-header-language">
-                                       <!-- "snippets/gtranslate.liquid" was not rendered, the associated app was uninstalled --> 
+                                    <div dz-user-logined class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                       <a class="display-block" href="user-profile.html"><span dz-user-name></span></a>
                                     </div>
+                                    <div dz-user-logined class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                       <a class="display-block" href="#" dz-logout>Logout</a>
+                                    </div>
+                                    
+                                    <div class="desktop-header-user-language desktop-header-language"></div>
                                     <div class="desktop-header-user-nav desktop-header-search">
                                        <a class="icon-search display-block" data-searchicon=""><i class="fas fa-search"></i></a>
                                        <div class="desktop-header-search-content" data-searchbox="">
@@ -186,21 +196,22 @@
                                        </div>
                                     </div>
                                    
-                                    <div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
+                                     <!--<div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
                                        <a href="" class="display-block">
                                        <em class="sli sli-heart">
                                        <span class="header-counter-pill" data-wishlist-count="">0</span>
                                        </em>
                                        </a>
-                                    </div>
-                                    <div class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
-                                       <a class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
-                                          <i class="fas fa-shopping-cart">
-                                             <!-- <svg class="svg-icon"><use xlink:href="#iconfinder_Basket_2205960" /></svg> -->
-                                             <span class="header-counter-pill mini-cart-total" data-cart-total="">0</span>
-                                          </i>                                                                                       
-                                       </a>
-                                    </div>
+                                    </div> -->
+                                    <dz-cart-status>
+                                       <div class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
+                                          <div  class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
+                                             <i class="fas fa-shopping-cart">
+                                                <span class="header-counter-pill mini-cart-total cart-counter" data-cart-total="">0</span>
+                                             </i>                                                                                       
+                                          </div>
+                                       </div>
+                                    </dz-cart-status>
                                  </div>
                               </div>
                            </div>
@@ -307,6 +318,7 @@
                   <div class="endofheader"></div>
                </div>
             </div>
+            </dz-user-panel>
          </header>
 
          <!-- main content -->
@@ -610,8 +622,35 @@
                <!-- /snippets/cart-mini-template.liquid -->
                <div class="grid-container">
                   <div class="mini-cart-inner-desktop">
-                     <h2 class="mini-cart-title">My shopping bag ( 0 )</h2>
-                     <div class="mini-cart-empty">You have no item in your cart.</div>
+                     <dz-cart-status>
+                        <h2 class="mini-cart-title">My shopping bag ( <span class="cart-counter" data-cart-total="">0</span> )</h2>
+                     </dz-cart-status>
+                     <dz-cart>
+                        <div dz-cart-have-item>
+                           <div data-wrapper=""></div>
+                           <div class="totals">
+                              <div class="totals-item">
+                                 <label>小計</label>
+                                 <div class="totals-value" dz-order-subtotal="" id="cart-subtotal">71.97</div>
+                              </div>						
+                              <div class="totals-item">
+                                 <dz-cart-shipping-method>
+                                    <label>運費</label>
+                                    <div class="totals-value" dz-order-shipping="" id="cart-shipping">15.00</div>
+                                 </dz-cart-shipping-method>
+                              </div>
+                              <div class="totals-item totals-item-total">
+                                 <label>總額</label>
+                                 <div class="totals-value" dz-order-total="" id="cart-total">90.57</div>
+                              </div>
+                              <div class="totals-item">
+                                 <div class="totals-value">
+                                    <button class="buy-product">下单结算</button>  
+                                 </div>
+                              </div>
+                        </div>
+                     <div class="mini-cart-empty" dz-cart-no-item>You have no item in your cart.</div>
+                     </dz-cart>
                      <div class="mini-cart-empty-message">
                         <!--?xml version="1.0" encoding="iso-8859-1"?-->
                         <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -664,7 +703,6 @@
                      </div>
                   </div>
                </div>
-            </div>
             <div class="loading text-center">
                <img src="./asset/ajax-loader.gif" alt="loading">
             </div>
