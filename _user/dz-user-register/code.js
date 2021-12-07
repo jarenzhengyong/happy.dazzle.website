@@ -115,6 +115,22 @@ class dzUserRegisterCode extends dzEditableComponent {
     await this.loadJsLibs();
     // Load other js modules
     this._handleFormValidate();
+
+    this.label = '用戶註冊';
+    this.menu = [
+            {		
+                'text': '設定用戶字段',
+                'event': 'manualEditor'
+            },
+            {
+                'text': '設定用戶驗證方法',
+                'event': 'setMaster'
+            }, 
+            {
+                'text': '設定Google/facebook 登入',
+                'event': 'stock'
+            }];
+
   }
 }
 

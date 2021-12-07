@@ -13,19 +13,19 @@ class dzBlockCode extends dzEditableComponent {
   }
   async onCreated(){
     //let html = this._template['_header'];
-    let footer = this._template['_footer'] || '';
-    try{
-      //document.querySelector('header').innerHTML = html;
-      document.querySelector('footer').innerHTML = footer;
+    // let footer = this._template['_footer'] || '';
+    // try{
+    //   //document.querySelector('header').innerHTML = html;
+    //   document.querySelector('footer').innerHTML = footer;
       
-      document.querySelectorAll('[dz-master]').forEach(item=>{
-          let id = item.getAttribute('dz-master') || null;
-          if (id)
-            item.innerHTML = this._template[id];
-      });
-    } catch(e){
+    //   document.querySelectorAll('[dz-master]').forEach(item=>{
+    //       let id = item.getAttribute('dz-master') || null;
+    //       if (id)
+    //         item.innerHTML = this._template[id];
+    //   });
+    // } catch(e){
       
-    }
+    // }
 
 
   }
