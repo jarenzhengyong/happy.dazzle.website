@@ -31,7 +31,7 @@ class dzCartCode extends dzEditableComponent {
       });
     });
   }
-
+  
   async _handleGoToCheckout() {
     location.href = window.helpers.getDefaultConfig().urls.checkout;
   }

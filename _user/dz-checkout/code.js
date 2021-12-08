@@ -109,7 +109,7 @@ class dzCheckoutCode extends dzEditableComponent {
 
     window.paypal['Buttons']({
       createOrder: (data, actions) => {
-        console.log('this.total', this.total);
+        console.log('this.total', this.total,this.order);
         return actions.order.create({
           purchase_units: [
             {
@@ -157,7 +157,7 @@ class dzCheckoutCode extends dzEditableComponent {
     //   }
     // }
 
-    await this.loadPaypalSdk();
+    //await this.loadPaypalSdk();
     // Interval detect changes
     this.currentState = {
       cartItems: window.store.get('cartItems') || {},
@@ -196,7 +196,6 @@ class dzCheckoutCode extends dzEditableComponent {
 
     await this._listenButtons();
   }
-
   async _listenButtons() {
     let buttons = this.querySelectorAll('[dz-func]');
     buttons.forEach(item => {
@@ -206,12 +205,20 @@ class dzCheckoutCode extends dzEditableComponent {
           case '_submitOrder':
             await this._calculateSummary();
             await this._handleSubmitOrder();
+            await this.loadPaypalSdk();
             break;
         }
       });
     });
   }
-
+  /* async _booking(){
+    let dzPopup = document.createElement('dz-booking-popup');
+    dzPopup.width = '600px';
+    dzPopup.height = '400px';
+    dzPopup.dialog = document.querySelector('vaadin-dialog');
+    Dazzle.componentPopup(dzPopup, dzPopup.width, dzPopup.height);
+    this.loadPaypalSdk();
+  } */
   async _cleanCart() {
     localStorage.removeItem('shippingMethod');
     localStorage.removeItem('cartDiscount');
@@ -302,7 +309,7 @@ class dzCheckoutCode extends dzEditableComponent {
     await window.helpers.showModal(window.helpers.getDefaultConfig().messages.submitOrderSuccessfully);
 
     await this._cleanCart();
-    location.href="/user-profile.html";
+    //location.href="/user-profile.html";
     // location.href = `${window.helpers.getDefaultConfig().urls.orderDetail}?id=${orderRes.data.data.id}`;
   }
 }

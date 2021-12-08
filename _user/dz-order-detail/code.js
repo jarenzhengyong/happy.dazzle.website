@@ -60,8 +60,8 @@ class dzOrderDetailCode extends dzEditableComponent {
 
   async _bindData() {
     let params = window.helpers.getParamsUrl();
-    let id = window.helpers.getHashId();
-    let res = await this._getDataDetail(id) || {};
+    //let id = window.helpers.getHashId();
+    let res = await this._getDataDetail(params.id) || {};
     let products = JSON.parse(res.jsonProducts || '[]');
     let jsonShippingInfo = JSON.parse(res.jsonShippingAddress || '{}');
     let jsonShippingMethod = JSON.parse(res.jsonShippingMethod || '{}');
@@ -86,29 +86,28 @@ class dzOrderDetailCode extends dzEditableComponent {
           amount: window.helpers.formatNumber(jsonCartItems[item.id].quantity * item.price),
           quantity: window.helpers.formatNumber(jsonCartItems[item.id].quantity),
         });
+        console.log(subTotal,'9900909')
       }
     });
-
     // Binding information order
-    try {
+    /* try { */
       this.querySelector('.order-id').innerText = params.id || '';
-      this.querySelector('.shipping-full-name').innerText = jsonShippingInfo.shippingFullName || '';
-      this.querySelector('.shipping-phone').innerText = jsonShippingInfo.shippingPhone || '';
-      this.querySelector('.shipping-address').innerText = jsonShippingInfo.shippingAddress || '';
-      this.querySelector('.shipping-method').innerText = jsonShippingMethod.text || '';
-      this.querySelector('.payment-method').innerText = jsonPaymentMethod.text || '';
-      this.querySelector('.order-date').innerText = date;
-
-  
+      //this.querySelector('.shipping-full-name').innerText = jsonShippingInfo.shippingFullName || '';
+      //this.querySelector('.shipping-phone').innerText = jsonShippingInfo.shippingPhone || '';
+      this.querySelector('.shipping-address').innerText = jsonShippingInfo || '';
+      this.querySelector('.shipping-method').innerText = jsonShippingMethod || '';
+      this.querySelector('.payment-method').innerText = jsonPaymentMethod || '';
+      //this.querySelector('.order-date').innerText = date;
+      console.log(subTotal,'90900990')
       // Binding summary
-      this.querySelector('.summary-sub-total').innerText = `$${window.helpers.formatNumber(subTotal || 0)}`;
+      /*  this.querySelector('.summary-sub-total').innerText = `$${window.helpers.formatNumber(subTotal || 0)}`;
       this.querySelector('.summary-shipping-fee').innerText = `$${window.helpers.formatNumber(jsonShippingMethod.amount || 0)}`;
       this.querySelector('.summary-discount').innerText = `$${window.helpers.formatNumber(jsonDiscount.amount || 0)}`;
       this.querySelector('.summary-status').innerText = window.helpers.getOrderStatusText(res.status || '');
-      this.querySelector('.summary-total').innerText = `$${window.helpers.formatNumber((subTotal + jsonShippingMethod.amount - jsonDiscount.amount) || 0)}`;
-    } catch(e) {
+      this.querySelector('.summary-total').innerText = `$${window.helpers.formatNumber((subTotal + jsonShippingMethod.amount - jsonDiscount.amount) || 0)}`;  */
+    /* } catch(e) {
       console.error(e);
-    }
+    } */
 
 
     // Binding products table

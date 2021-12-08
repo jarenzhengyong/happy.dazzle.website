@@ -23,6 +23,7 @@ class dzOrderItemCode extends dzEditableComponent {
 
   _onClickViewDetail() {
     window.location.href = `${window.helpers.getDefaultConfig().urls.orderDetail}?id=${this.id}`;
+    //window.location.href = `${window.helpers.getDefaultConfig().urls.orderDetail}#${this.id}`;
   }
 
   _listenDzFunction() {

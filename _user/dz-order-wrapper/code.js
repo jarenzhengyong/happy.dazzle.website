@@ -30,8 +30,11 @@ class dzOrderWrapperCode extends dzEditableComponent {
   async search(filterConditions = {}) {
     try {
       let wrapper = this.querySelector('[data-wrapper]');
+      //let template = this._template['order-item'];
+      //let templateItem = this._template['order-item-product'];
       let template = this.querySelector('template#order-item').innerHTML;
       let res = await authUser().getMyOrders();
+      console.log(res, '90909')
       if (res && res.data.data) {
         let data = res.data.data;
 
@@ -68,6 +71,11 @@ class dzOrderWrapperCode extends dzEditableComponent {
             let allHtml = '';
             currentPageItems.forEach(item => {
               let html = window.helpers.replaceToken(item, template);
+              /* let list = '';
+              JSON.parse(item.jsonProducts).forEach(child => {
+                list += window.helpers.replaceToken(child, templateItem)
+              })
+              html += list; */
               allHtml = allHtml + html;
             });
 
