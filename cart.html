@@ -326,58 +326,55 @@
             </dz-user-panel>
          </header>
          <div class="searchresult-area" data-ajax-search-result="" style="display: none;"></div>
-            <main role="main" class="layout-main">
-               <!-- <div style="margin: 2rem 1rem;padding-bottom:1rem;border-bottom: 1px solid #f5f5f5;">
-                  <span style="margin: 1rem 5rem 0 5rem;font-size: 30px;color:green;font-weight: bold;">1、购物车</span>
-                  <span style="margin: 1rem 5rem 0 5rem;font-size: 30px;">2、填写和提交订单信息</span>
-                  <span style="margin: 1rem 5rem 0 5rem;font-size: 30px;">3、成功提交订单</span>
-               </div> -->
-             <dz-cart>
-               <div dz-cart-have-item class="shopping-cart" style="margin: 5rem;">
-                  <h1>購物車</h1>
-                  <div class="column-labels">
-                     <label class="product-image">圖片</label>
-                     <label class="product-details">產品</label>
-                     <label class="product-price">價格</label>
-                     <label class="product-quantity">數量</label>
-                     <label class="product-removal">移除</label>
-                     <label class="product-line-price">總數</label>
-                  </div>
-                  <div data-wrapper=""></div>
-                  <div class="totals">
-                     <div class="totals-item">
-                     <label>小計</label>
-                     <div class="totals-value" dz-order-subtotal="" id="cart-subtotal">--</div>
-                     </div>						
-                     <div class="totals-item">
-                        <dz-cart-shipping-method>
-                           <label>運費</label>
-                           <div class="totals-value" dz-order-shipping="" id="cart-shipping">15</div>
-                        </dz-cart-shipping-method>
-                     </div>
-                     <div class="totals-item totals-item-total">
-                        <label>總額</label>
-                        <div class="totals-value" dz-order-total="" id="cart-total">--</div>
-                     </div>
-                     <div class="totals-item">
-                        <label>&nbsp;</label>
-                        <dz-checkout>
-                           <div class="totals-value">
-                              <button class="buy-product" dz-func="_submitOrder">
-                                 下单结算
-                              </button>                      
-                           </div>
-                           <div class="paypal-button-container"></div>
-                        </dz-checkout>
-                       </div>
-                     </div>
-                  </div>
-                  <div dz-cart-no-item class="shopping-cart" style="margin: 5rem;">
+         <div class="grid-container">
+            <div class="collection-main-container" style="margin: 40px auto;">
+               <dz-cart>
+                  <h1 style="border-bottom: 1px solid #ddd;padding-bottom: 10px;">購物車</h1>
+                  <div dz-cart-no-item class="shopping-cart">
                      <h4>Sorry, no Item.</h4>
                   </div>
-               </dz-cart>
-            </main>
-         
+                  <div dz-cart-have-item class="shopping-cart" style="margin-top: 10px;">
+                     <div class="column-labels">
+                        <label class="product-image">圖片</label>
+                        <label class="product-details">產品</label>
+                        <label class="product-price">價格</label>
+                        <label class="product-quantity">數量</label>
+                        <label class="product-removal">移除</label>
+                        <label class="product-line-price">總數</label>
+                     </div>
+                     <div data-wrapper=""></div>
+                     <div class="totals">
+                        <div class="totals-item">
+                        <label>小計</label>
+                        <div class="totals-value" dz-order-subtotal="" id="cart-subtotal">--</div>
+                        </div>						
+                        <div class="totals-item">
+                           <dz-cart-shipping-method>
+                              <label>運費</label>
+                              <div class="totals-value" dz-order-shipping="" id="cart-shipping">15</div>
+                           </dz-cart-shipping-method>
+                        </div>
+                        <div class="totals-item totals-item-total">
+                           <label>總額</label>
+                           <div class="totals-value" dz-order-total="" id="cart-total">--</div>
+                        </div>
+                        <div class="totals-item">
+                           <dz-checkout>
+                              <div class="totals-value">
+                                <!--  <button class="buy-product" dz-func="_submitOrder">
+                                    下單結算
+                                 </button>  -->
+                                 <button class="button" dz-func="_submitOrder">下單結算</button>     
+                                 <div class="paypal-button-container"></div>                
+                              </div>
+                           </dz-checkout>
+                        </div>
+                        </div>
+                     </div>
+                  </dz-cart>
+               <!-- </main> -->
+            </div>
+         </div>
          <footer dz-template-id="_footer" class="layout-footer footer-style1">
             <div id="shopify-section-theme-footer" class="shopify-section">
                <!-- /sections/theme-footer.liquid --><!-- /snippets/theme-footer.liquid -->
