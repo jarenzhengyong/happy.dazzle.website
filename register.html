@@ -92,6 +92,7 @@
       
       <div class="bkghomepage">
          <header dz-template-id="_header" class="layout-header header-style3">
+            <dz-user-panel>
             <div id="shopify-section-theme-header3" class="shopify-section" style="position: relative;">
                <!-- /snippets/theme-header.liquid -->
                <div class="header-wrap width-100" data-header-wrap>
@@ -112,13 +113,18 @@
                               </div>
                            </div>
                            <div class="cell auto">
-                              <div class="flex-container cell-custom-header align-right" data-header-right>
-                                 
-                                 <div class="mini-cart mobile-header-user-nav display-inline-block">
-                                    <a class="display-block" data-toggle="mini-cart-info">
-                                       <i class="fas fa-shopping-cart"> <span class="header-counter-pill" data-cart-total>0</span></i>                                                                                                           
+                                 <div class="flex-container cell-custom-header align-right" data-header-right>
+                                    <div dz-user-no-login class="mini-cart mobile-header-user-nav display-inline-block">
+                                       <a class="display-block" data-toggle="mini-cart-info">
+                                          sign in                                                                                                           
+                                    </div>                                 
+                                    <div dz-user-logined class="mini-cart mobile-header-user-nav display-inline-block">
+                                       <a class="display-block" data-toggle="mini-cart-info">
+                                          <i class="fas fa-shopping-cart">
+                                       <span class="header-counter-pill" data-cart-total>0</span></i>                                                                                                           
+                                    </div>
                                  </div>
-                              </div>
+
                            </div>
                         </div>
                      </div>
@@ -156,16 +162,20 @@
                                           </li>
                                        </ul>
                                     </div> -->
-                                    <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                    <div dz-user-no-login class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
                                        <a class="display-block" href="login.html">Sign In</a>
                                     </div>
-                                    <div class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                    <div dz-user-no-login class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
                                        <a class="display-block" href="register.html">Register</a>
                                     </div>
-                                    
-                                    <div class="desktop-header-user-language desktop-header-language">
-                                       <!-- "snippets/gtranslate.liquid" was not rendered, the associated app was uninstalled --> 
+                                    <div dz-user-logined class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                       <a class="display-block" href="profile.html"><span dz-user-name></span></a>
                                     </div>
+                                    <div dz-user-logined class="desktop-header-user-nav desktop-header-account account-nonlogged account-register">
+                                       <a class="display-block" href="#" dz-logout>Logout</a>
+                                    </div>
+                                    
+                                    <div class="desktop-header-user-language desktop-header-language"></div>
                                     <div class="desktop-header-user-nav desktop-header-search">
                                        <a class="icon-search display-block" data-searchicon=""><i class="fas fa-search"></i></a>
                                        <div class="desktop-header-search-content" data-searchbox="">
@@ -185,21 +195,22 @@
                                        </div>
                                     </div>
                                    
-                                    <div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
+                                     <!--<div class="desktop-header-user-nav desktop-header-wishlist" data-wishlist-link-block="">
                                        <a href="" class="display-block">
                                        <em class="sli sli-heart">
                                        <span class="header-counter-pill" data-wishlist-count="">0</span>
                                        </em>
                                        </a>
-                                    </div>
-                                    <div class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
-                                       <a class="display-block" data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" style="cursor: pointer;">
-                                          <i class="fas fa-shopping-cart">
-                                             <!-- <svg class="svg-icon"><use xlink:href="#iconfinder_Basket_2205960" /></svg> -->
-                                             <span class="header-counter-pill mini-cart-total" data-cart-total="">0</span>
-                                          </i>                                                                                       
-                                       </a>
-                                    </div>
+                                    </div>  data-toggle="mini-cart-desktop-info" aria-expanded="false" aria-controls="mini-cart-desktop-info" -->
+                                    <dz-cart-status>
+                                       <div class="desktop-header-user-nav desktop-header-mini-cart mini-cart">
+                                          <div dz-func="_gotoCart" class="display-block"style="cursor: pointer;">
+                                             <i class="fas fa-shopping-cart">
+                                                <span class="header-counter-pill mini-cart-total cart-counter" data-cart-total="">0</span>
+                                             </i>                                                                                       
+                                          </div>
+                                       </div>
+                                    </dz-cart-status>
                                  </div>
                               </div>
                            </div>
@@ -306,6 +317,7 @@
                   <div class="endofheader"></div>
                </div>
             </div>
+            </dz-user-panel>
          </header>
 
          <!-- main content -->
