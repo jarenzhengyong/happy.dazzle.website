@@ -23,20 +23,22 @@ class dzProductItemCode extends dzEditableComponent {
   }
 
   _handleCartStatus() {
-    const cartItemIds = window.store.get('cartItems') || {};
-    const itemId = this.getAttribute('id');
-    const btnAddCart = this.querySelector('.btn-add-cart');
-    const btnRemoveCart = this.querySelector('.btn-remove-cart');
-    const hasCartBtns = btnAddCart || btnRemoveCart;
-    if (hasCartBtns) {
-      if (cartItemIds[itemId]) {
-        btnAddCart.style.display = 'none';
-        btnRemoveCart.style.display = '';
-      } else {
-        btnAddCart.style.display = '';
-        btnRemoveCart.style.display = 'none';
-      }
-    }
+    console.log('Cart Update');
+    Dazzle.dzFire('cart-change',{});
+    // const cartItemIds = window.store.get('cartItems') || {};
+    // const itemId = this.getAttribute('id');
+    // const btnAddCart = this.querySelector('.btn-add-cart');
+    // const btnRemoveCart = this.querySelector('.btn-remove-cart');
+    // const hasCartBtns = btnAddCart || btnRemoveCart;
+    // if (hasCartBtns) {
+    //   if (cartItemIds[itemId]) {
+    //     btnAddCart.style.display = 'none';
+    //     btnRemoveCart.style.display = '';
+    //   } else {
+    //     btnAddCart.style.display = '';
+    //     btnRemoveCart.style.display = 'none';
+    //   }
+    // }
   }
 
   _handleLikeStatus() {

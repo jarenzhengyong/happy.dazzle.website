@@ -1,0 +1,172 @@
+
+
+
+<div id="shopify-section-theme-footer" class="shopify-section">
+               <!-- /sections/theme-footer.liquid --><!-- /snippets/theme-footer.liquid -->
+               <div class="footer footer-style1 ">
+                  <div class="footer-newsletter-wrapper " style="border-bottom: 1px solid transparent;">
+                     
+                  </div>
+                  <div class="footer-maincontent">
+                     <div class="grid-container">
+                        <div class="footer-maincontent-grid grid-x">
+                           <div class="cell show-for-large">
+                              <div class="footer-linklist-2">
+                                 <h3 class="footer-title">
+                                    產品及服務
+                                 </h3>
+                                 <div class="footer-column-content">
+                                    <ul class="no-bullet linklist-content">
+                                       <li>
+                                          <a href="/products.html">All Products</a>           
+                                       </li>
+                                       
+                                    </ul>
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cell hide-for-large">
+                              <div class="accordion footer-linklist-2 footer-linklist-accordion" data-allow-all-closed="true" data-accordion="" role="tablist" data-l="jbaczl-l">
+                                 <div class="accordion-item" data-accordion-item="" role="presentation">
+                                    <a class="accordion-title footer-linklist-accordion-title" aria-controls="o83bm4-accordion" role="tab" id="o83bm4-accordion-label" aria-expanded="false" aria-selected="false">
+                                    <span>產品及服務</span>
+                                    </a>
+                                    <div class="accordion-content padding-vertical-0" data-tab-content="" role="tabpanel" aria-labelledby="o83bm4-accordion-label" aria-hidden="true" id="o83bm4-accordion">
+                                       <ul class="no-bullet footer-linklist-accordion-content margin-0">
+                                          <li class="footer-linklist-accordion-item">
+                                             <a href="/products.html">All Products</a>           
+                                          </li>
+                                          
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cell show-for-large">
+                              <div class="footer-linklist-2">
+                                 <h3 class="footer-title">
+                                    客戶服務
+                                 </h3>
+                                 <div class="footer-column-content">
+                                    <ul class="no-bullet linklist-content">                                 
+                                       <li>
+                                          <a href="/aboutus.html">關於我們</a>           
+                                       </li>
+                                       <li>
+                                          <a href="/contactus.html">聯絡我們</a>           
+                                       </li>
+                                    </ul>
+                                    <ul class="no-bullet linklist-content"></ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cell hide-for-large">
+                              <div class="accordion footer-linklist-2 footer-linklist-accordion" data-allow-all-closed="true" data-accordion="" role="tablist" data-l="4lswef-l">
+                                 <div class="accordion-item" data-accordion-item="" role="presentation">
+                                    <a class="accordion-title footer-linklist-accordion-title" aria-controls="fhcw7o-accordion" role="tab" id="fhcw7o-accordion-label" aria-expanded="false" aria-selected="false">
+                                    <span>客戶服務</span>
+                                    </a>
+                                    <div class="accordion-content padding-vertical-0" data-tab-content="" role="tabpanel" aria-labelledby="fhcw7o-accordion-label" aria-hidden="true" id="fhcw7o-accordion">
+                                       <ul class="no-bullet footer-linklist-accordion-content margin-0">                                          
+                                          <li class="footer-linklist-accordion-item">
+                                             <a href="/aboutus.html">關於我們</a>           
+                                          </li>
+                                          <li class="footer-linklist-accordion-item">
+                                             <a href="/contactus.html">聯絡我們</a>           
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cell show-for-large">
+                              <div class="footer-linklist-2">
+                                 <h3 class="footer-title">
+                                    條款及細則
+                                 </h3>
+                                 <div class="footer-column-content">
+                                    <ul class="no-bullet linklist-content">
+                                       <li>
+                                          <a href="/privacy.html">私隱政策</a>           
+                                       </li>
+                                       <li>
+                                          <a href="/terms.html">免責條款</a>           
+                                       </li>
+                                    </ul>
+                                    <ul class="no-bullet linklist-content"></ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cell hide-for-large">
+                              <div class="accordion footer-linklist-2 footer-linklist-accordion" data-allow-all-closed="true" data-accordion="" role="tablist" data-l="buvwnk-l">
+                                 <div class="accordion-item" data-accordion-item="" role="presentation">
+                                    <a class="accordion-title footer-linklist-accordion-title" aria-controls="lly1fh-accordion" role="tab" id="lly1fh-accordion-label" aria-expanded="false" aria-selected="false">
+                                    <span>條款及細則</span>
+                                    </a>
+                                    <div class="accordion-content padding-vertical-0" data-tab-content="" role="tabpanel" aria-labelledby="lly1fh-accordion-label" aria-hidden="true" id="lly1fh-accordion">
+                                       <ul class="no-bullet footer-linklist-accordion-content margin-0">
+                                          <li class="footer-linklist-accordion-item">
+                                             <a href="/privacy.html">私隱政策</a>           
+                                          </li>
+                                          <li class="footer-linklist-accordion-item">
+                                             <a href="/terms.html">免責條款</a>           
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="cell show-for-large">
+                              <div class="footer-about">
+                                 <h3 class="footer-title">
+                                    聯絡我們
+                                 </h3>
+                                 <div class="footer-column-content">                                    
+                                    <div class="email-area">
+                                       <!-- <svg class="icon svg-icon"><use xlink:href="#icon-envelope" /></svg> -->
+                                       
+                                       <div class="content">info@happycons.com</div>
+                                    </div>
+                                 </div>
+                                 
+                              </div>
+                           </div>
+                           <div class="cell hide-for-large">
+                              <div class="accordion footer-about-mobile" data-allow-all-closed="true" data-accordion="" role="tablist" data-l="0zngs4-l">
+                                 <div class="accordion-item" data-accordion-item="" role="presentation">
+                                    <a class="accordion-title footer-about-title" aria-controls="dyda3g-accordion" role="tab" id="dyda3g-accordion-label" aria-expanded="false" aria-selected="false">
+                                    <span>美容中心</span>
+                                    </a>
+                                    <div class="accordion-content padding-vertical-0" data-tab-content="" role="tabpanel" aria-labelledby="dyda3g-accordion-label" aria-hidden="true" id="dyda3g-accordion">
+                                       <div class="footer-column-content">
+                                          
+                                          
+                                          <div class="email-area">
+                                             <!-- <svg class="icon svg-icon"><use xlink:href="#icon-envelope" /></svg> -->
+                                             <em class="sli sli-envelope"></em>
+                                             <div class="content">info@happycons.com</div>
+                                          </div>
+                                       </div>
+                                       
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="footer-bottom">
+                     <div class="grid-container">
+                        <div class="grid-x">
+                           <div class="cell large-4 xlarge-6 ">
+                              <div class="footer-copyright">
+                                 <div class="copyright">© 2021 <a href="/index.html" title="">Happy Consultant</a></div>
+                              </div>
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>

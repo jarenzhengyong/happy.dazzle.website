@@ -1,0 +1,11 @@
+{
+    "uid":"happy",
+    "table":"product",
+    "query":{
+        "match_all":{}
+    },
+    "templateId":"product-item",
+    "data":null
+}  
+  
+    

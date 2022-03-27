@@ -117,6 +117,8 @@ class dzUserPanelCode extends dzEditableComponent {
   async logout(){
           localStorage.removeItem('authUser');
           localStorage.removeItem('token');
+          localStorage.removeItem('user');
+
           await window.helpers.showModal(window.helpers.getDefaultConfig().messages.logoutSuccessfully, {autoClose: true});
           location.href = window.helpers.getDefaultConfig().urls.login;
   }
@@ -132,7 +134,7 @@ class dzUserPanelCode extends dzEditableComponent {
   async onCreated() {
     // await this.loadDomQuery();
     // await this.loadJsLibs();
-
+    console.log('User Panel');
     this._checkCurrentAccount();
     // this.updateHeader();
     // // this.updateShoppingCart();

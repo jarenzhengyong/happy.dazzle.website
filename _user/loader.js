@@ -7,7 +7,9 @@ window.siteUid = 'happy';
 
 await Dazzle.listenHotKeys();
 await Dazzle.initGlobalVars();
-await Dazzle.dynamicLoadComponents();
 
-let dzBlock = document.createElement('dz-block');
-document.querySelector('body').appendChild(dzBlock);
+await Dazzle.dynamicLoadComponents();
+console.log('Loader');
+
+// let dzBlock = document.createElement('dz-block');
+// document.querySelector('body').appendChild(dzBlock);

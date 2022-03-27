@@ -25,7 +25,8 @@ class dzProductWrapperCode extends dzEditableComponent{
       item.addEventListener('click', async () => {
         switch (fc) {
           case '_addToCart':
-            await this._addToCart();
+            // jaren
+            await this._addToCart(item.getAttribute('data-id'));
             break;
           case '_likeItem':
             await this._likeItem();
@@ -37,9 +38,27 @@ class dzProductWrapperCode extends dzEditableComponent{
       });
     });
   }
+  async _addToCart(productId) {
+    // jaren
+    const cartItems = this._getStore('cartItems') || {};
+    const purchaseQuantity = 1;
+    const updatedCartItems = {
+      ...cartItems,
+      [productId]: {
+        id: productId,
+        quantity: productId in cartItems ? cartItems[productId].quantity + purchaseQuantity : purchaseQuantity,
+      },
+    };
+    await window['helpers'].showModal('Add item successfully', {autoClose: true});
+    this._setStore('cartItems', updatedCartItems);
+  }
+  
 
   _setStore(key, value) {
     window.store.set(key, value);
+  }
+  _getStore(key) {
+    return window.store.get(key);
   }
 
   formatData(data) {
@@ -80,9 +99,6 @@ class dzProductWrapperCode extends dzEditableComponent{
         },*/
         "match_all": {
         }
-        /*'match': {
-          'match_all': []
-        } */
       };
     }
 
@@ -91,7 +107,7 @@ class dzProductWrapperCode extends dzEditableComponent{
     let template = this._template['product-item'];
     const defaultImage = window.helpers.getDefaultConfig().urls.defaultImage;
     console.log('Search',json);
-    this.itemManager.searchDataByES(json,12).then(items => {
+    this.itemManager.searchDataByES(json).then(items => {
       // Sort items if it was defined in filterConditions
       console.log(items);
       items = this.formatData(items);
@@ -137,6 +153,8 @@ class dzProductWrapperCode extends dzEditableComponent{
           this._matchHeight();
           setTimeout(() => {
             this._matchHeight();
+            // jaren
+            this._listenDzFunction();
           }, 1000);
         },
       });

@@ -21,7 +21,7 @@ class dzUserRegisterCode extends dzEditableComponent {
     const loginForm = this.querySelector('form');
     window.domQuery(loginForm).validate({
       rules: {
-        'firstname': 'required',
+        //'firstname': 'required',
         'lastname': 'required',
         'email': 'required',
         // 'month': 'required',
@@ -29,23 +29,23 @@ class dzUserRegisterCode extends dzEditableComponent {
         // 'year': 'required',
         // 'gender': 'required',
         'password': 'required',
-        /* 'confirmation': {
+        'confirmation': {
           required: true,
-          equalTo: '#password2',
+          equalTo: '#password',
         },
-        'phone': 'required',
+        /*'phone': 'required',
         'address_1': 'required', */
       },
       messages: {
-        'firstname': window.helpers.getDefaultConfig().messages.requiredField,
+        //'firstname': window.helpers.getDefaultConfig().messages.requiredField,
         'lastname': window.helpers.getDefaultConfig().messages.requiredField,
         'email': window.helpers.getDefaultConfig().messages.requiredField,
         'password': window.helpers.getDefaultConfig().messages.requiredField,
-        /* 'confirmation': {
+        'confirmation': {
           required: window.helpers.getDefaultConfig().messages.requiredField,
           equalTo: window.helpers.getDefaultConfig().messages.matchToPasswordField,
         },
-        'phone': window.helpers.getDefaultConfig().messages.requiredField,
+        /* 'phone': window.helpers.getDefaultConfig().messages.requiredField,
         'address_1': window.helpers.getDefaultConfig().messages.requiredField, */
       },
       submitHandler: async (form, event) => {
@@ -61,7 +61,7 @@ class dzUserRegisterCode extends dzEditableComponent {
             'password': mapping.password,
             'profile': {
               'email': mapping.email,
-              'firstName': mapping.firstname,
+              'firstName': mapping.lastname,
               'lastName': mapping.lastname,
               //'phone': mapping.phone,
               // 'birthday': `${mapping.year}/${mapping.month}/${mapping.day}`,

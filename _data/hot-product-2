@@ -1,0 +1,13 @@
+{
+    "uid":"happy",
+    "table":"product",
+    "query":{
+        "match":{
+            "category":"美容產品"
+        }
+    },
+    "templateId":"hot-item",
+    "data":null
+}  
+  
+    

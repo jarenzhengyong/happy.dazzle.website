@@ -1,0 +1,23 @@
+ <div class="collection-product-item cell" style="box-sizing: border-box;">
+      <div class="product-grid" data-product-layout="">
+         <div class="product-item" data-product-item="">
+            <div class="product-item-thumb">
+               <a href="/product/[[id]]" class="display-block"><img src="[[image]]" data-src="[[image]]"  class="product-item-image lazyloaded" data-viewed-image=""></a>
+               <div class="product-item-label-list"></div>                                                
+               <div class="cart-button bottom-center">
+                  <div class="product-item-buttons"><a href="/product/[[id]]" class="product-item-button product-item-button-cart" title="Add To Bag" disabled="disabled"><em class="sli sli-basket"></em> <span>Choose Options</span></a></div>
+               </div>
+            </div>
+            <div class="product-item-caption">
+               <div class="product-item-group grid-x">
+                  <div class="product-item-title-rating cell small-12 medium-6 large-8 xlarge-8 xxlarge-8 xxxlarge-9">
+                     <h4 class="product-item-title">
+                        <a href="/product/[[id]]">[[title]]</a>
+                     </h4>                                                      
+                  </div>
+                  <div class="product-item-price cell small-12 medium-6 large-4 xlarge-4 xxlarge-4 xxxlarge-3"><span class="product-item-price-default">$[[price]]</span></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

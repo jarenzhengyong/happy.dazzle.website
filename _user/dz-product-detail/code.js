@@ -110,10 +110,11 @@ class dzProductDetailCode extends dzEditableComponent {
     // console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     let path = urlParams.get('path') || store.get('thisPath') || '';
-    console.log('Path',path,urlParams.get('path'),store.get('thisPath'));
+    
     let hash = window.location.hash.substring(1);
     let dataId = store.get('dataId')|| null;
     id = hash ||  metaId || dataId || null;    
+    console.log('Path',id);
     this.dataId = id;
     return id; 
   }
@@ -211,9 +212,11 @@ class dzProductDetailCode extends dzEditableComponent {
   async getItem(){
       let item = this.getAttribute('item') || null;
       if (!item)
-          this.item = await this.productManager.getDataByES(this.dataId);
+          this.item = await this.productManager.getDataByES(encodeURIComponent(this.dataId));
       else 
           this.item = JSON.parse(item);
+    console.log('Get ID',this.item);
+
   }
   static get properties() {
     return {
